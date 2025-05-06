@@ -18,7 +18,7 @@ namespace TallerDeVehiculos
         public Frm_Menu()
         {
             InitializeComponent();
-
+            
             int w = (int)(Screen.PrimaryScreen.WorkingArea.Width * 0.56);
             int h = (int)(Screen.PrimaryScreen.WorkingArea.Height * 0.74);
             //Debug.WriteLine($"{w},{h}");

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Menu));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             userInfo1 = new CapaPresentacion.ComponentsUI.UserInfo();
             Pn_Menu = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
@@ -46,6 +48,7 @@
             Pn_Content = new Panel();
             Pn_SubContent = new Panel();
             Pn_Body = new Panel();
+            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             Apn_Title = new Table.AlignedPanel();
             Pb_maximizar = new PictureBox();
             Pb_Restaurar = new PictureBox();
@@ -62,6 +65,8 @@
             alignedPanel1.SuspendLayout();
             Pn_Content.SuspendLayout();
             Pn_SubContent.SuspendLayout();
+            Pn_Body.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             Apn_Title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Pb_maximizar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb_Restaurar).BeginInit();
@@ -279,11 +284,37 @@
             // 
             // Pn_Body
             // 
+            Pn_Body.Controls.Add(chart1);
             Pn_Body.Dock = DockStyle.Fill;
             Pn_Body.Location = new Point(0, 25);
             Pn_Body.Name = "Pn_Body";
             Pn_Body.Size = new Size(843, 743);
             Pn_Body.TabIndex = 1;
+            // 
+            // chart1
+            // 
+            chart1.BackColor = Color.Transparent;
+            chart1.BackSecondaryColor = Color.Transparent;
+            chart1.BorderlineColor = Color.Transparent;
+            chart1.BorderSkin.PageColor = Color.Transparent;
+            chartArea1.BackColor = Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            chart1.ChartAreas.Add(chartArea1);
+            chart1.Location = new Point(18, 36);
+            chart1.Name = "chart1";
+            chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Color = Color.Transparent;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series1.ShadowColor = Color.Transparent;
+            series1.YValuesPerPoint = 4;
+            chart1.Series.Add(series1);
+            chart1.Size = new Size(300, 300);
+            chart1.TabIndex = 0;
+            chart1.Text = "chart1";
             // 
             // Apn_Title
             // 
@@ -368,6 +399,8 @@
             alignedPanel1.ResumeLayout(false);
             Pn_Content.ResumeLayout(false);
             Pn_SubContent.ResumeLayout(false);
+            Pn_Body.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
             Apn_Title.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)Pb_maximizar).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb_Restaurar).EndInit();
@@ -400,5 +433,6 @@
         private CapaPresentacion.ComponentsUI.IconsModernButtons IcBtn_customer;
         private Table.AlignedPanel alignedPanel6;
         private CapaPresentacion.ComponentsUI.IconsModernButtons IcBtn_wrench;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
