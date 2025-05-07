@@ -23,6 +23,7 @@ namespace CapaPresentacion.ComponentsUI
             this.label1.Click += Clicked;
             this.alignedPanel1.Click += Clicked;
             this.panel1.Click += Clicked;
+            this.DoubleBuffered =true;
         }
 
 

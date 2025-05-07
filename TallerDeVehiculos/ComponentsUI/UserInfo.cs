@@ -18,6 +18,7 @@ namespace CapaPresentacion.ComponentsUI
         {
             InitializeComponent();
             RedondearEsquinas(pictureBox1, 14);
+            this.DoubleBuffered = true;
         }
 
         public static void RedondearEsquinas(PictureBox pictureBox, int radio)

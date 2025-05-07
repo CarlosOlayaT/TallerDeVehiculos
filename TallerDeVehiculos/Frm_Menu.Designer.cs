@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Menu));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             userInfo1 = new CapaPresentacion.ComponentsUI.UserInfo();
             Pn_Menu = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            panel1 = new Panel();
             alignedPanel4 = new Table.AlignedPanel();
             IcBtn_Dashboard = new CapaPresentacion.ComponentsUI.IconsModernButtons();
             alignedPanel3 = new Table.AlignedPanel();
@@ -46,14 +45,12 @@
             pictureBox1 = new PictureBox();
             alignedPanel1 = new Table.AlignedPanel();
             Pn_Content = new Panel();
-            Pn_SubContent = new Panel();
             Pn_Body = new Panel();
-            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             Apn_Title = new Table.AlignedPanel();
-            Pb_maximizar = new PictureBox();
-            Pb_Restaurar = new PictureBox();
-            Pb_Minimizar = new PictureBox();
             Pb_Close = new PictureBox();
+            Pb_Minimizar = new PictureBox();
+            Pb_Restaurar = new PictureBox();
+            Pb_maximizar = new PictureBox();
             Pn_Menu.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             alignedPanel4.SuspendLayout();
@@ -64,14 +61,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             alignedPanel1.SuspendLayout();
             Pn_Content.SuspendLayout();
-            Pn_SubContent.SuspendLayout();
-            Pn_Body.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             Apn_Title.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)Pb_maximizar).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Pb_Restaurar).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Pb_Minimizar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb_Close).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Pb_Minimizar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Pb_Restaurar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Pb_maximizar).BeginInit();
             SuspendLayout();
             // 
             // userInfo1
@@ -105,6 +99,7 @@
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.Controls.Add(panel1);
             flowLayoutPanel1.Controls.Add(alignedPanel4);
             flowLayoutPanel1.Controls.Add(alignedPanel3);
             flowLayoutPanel1.Controls.Add(alignedPanel5);
@@ -116,13 +111,20 @@
             flowLayoutPanel1.Size = new Size(237, 451);
             flowLayoutPanel1.TabIndex = 3;
             // 
+            // panel1
+            // 
+            panel1.Location = new Point(3, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(234, 24);
+            panel1.TabIndex = 4;
+            // 
             // alignedPanel4
             // 
             alignedPanel4.BackColor = Color.Transparent;
             alignedPanel4.BackgroundColor = Color.Transparent;
             alignedPanel4.ContentAlignment = ContentAlignment.MiddleCenter;
             alignedPanel4.Controls.Add(IcBtn_Dashboard);
-            alignedPanel4.Location = new Point(3, 3);
+            alignedPanel4.Location = new Point(3, 33);
             alignedPanel4.Name = "alignedPanel4";
             alignedPanel4.Radius = 1;
             alignedPanel4.Size = new Size(234, 77);
@@ -149,7 +151,7 @@
             alignedPanel3.BackgroundColor = Color.Transparent;
             alignedPanel3.ContentAlignment = ContentAlignment.MiddleCenter;
             alignedPanel3.Controls.Add(IcBtn_mechanic);
-            alignedPanel3.Location = new Point(3, 86);
+            alignedPanel3.Location = new Point(3, 116);
             alignedPanel3.Name = "alignedPanel3";
             alignedPanel3.Radius = 1;
             alignedPanel3.Size = new Size(234, 77);
@@ -176,7 +178,7 @@
             alignedPanel5.BackgroundColor = Color.Transparent;
             alignedPanel5.ContentAlignment = ContentAlignment.MiddleCenter;
             alignedPanel5.Controls.Add(IcBtn_customer);
-            alignedPanel5.Location = new Point(3, 169);
+            alignedPanel5.Location = new Point(3, 199);
             alignedPanel5.Name = "alignedPanel5";
             alignedPanel5.Radius = 1;
             alignedPanel5.Size = new Size(234, 77);
@@ -203,7 +205,7 @@
             alignedPanel6.BackgroundColor = Color.Transparent;
             alignedPanel6.ContentAlignment = ContentAlignment.MiddleCenter;
             alignedPanel6.Controls.Add(IcBtn_wrench);
-            alignedPanel6.Location = new Point(3, 252);
+            alignedPanel6.Location = new Point(3, 282);
             alignedPanel6.Name = "alignedPanel6";
             alignedPanel6.Radius = 1;
             alignedPanel6.Size = new Size(234, 77);
@@ -262,59 +264,24 @@
             // 
             // Pn_Content
             // 
-            Pn_Content.Controls.Add(Pn_SubContent);
+            Pn_Content.BackgroundImage = CapaPresentacion.Properties.Resources.Fondo;
+            Pn_Content.BackgroundImageLayout = ImageLayout.Stretch;
+            Pn_Content.Controls.Add(Pn_Body);
+            Pn_Content.Controls.Add(Apn_Title);
             Pn_Content.Dock = DockStyle.Fill;
             Pn_Content.Location = new Point(237, 0);
             Pn_Content.Name = "Pn_Content";
             Pn_Content.Size = new Size(843, 768);
             Pn_Content.TabIndex = 2;
-            Pn_Content.Paint += PanelDegradado_Paint;
-            // 
-            // Pn_SubContent
-            // 
-            Pn_SubContent.BackColor = Color.Transparent;
-            Pn_SubContent.Controls.Add(Pn_Body);
-            Pn_SubContent.Controls.Add(Apn_Title);
-            Pn_SubContent.Dock = DockStyle.Fill;
-            Pn_SubContent.Location = new Point(0, 0);
-            Pn_SubContent.Name = "Pn_SubContent";
-            Pn_SubContent.Size = new Size(843, 768);
-            Pn_SubContent.TabIndex = 3;
-            Pn_SubContent.Paint += Pn_SubContent_Paint;
             // 
             // Pn_Body
             // 
-            Pn_Body.Controls.Add(chart1);
+            Pn_Body.BackColor = Color.Transparent;
             Pn_Body.Dock = DockStyle.Fill;
             Pn_Body.Location = new Point(0, 25);
             Pn_Body.Name = "Pn_Body";
             Pn_Body.Size = new Size(843, 743);
             Pn_Body.TabIndex = 1;
-            // 
-            // chart1
-            // 
-            chart1.BackColor = Color.Transparent;
-            chart1.BackSecondaryColor = Color.Transparent;
-            chart1.BorderlineColor = Color.Transparent;
-            chart1.BorderSkin.PageColor = Color.Transparent;
-            chartArea1.BackColor = Color.Transparent;
-            chartArea1.Name = "ChartArea1";
-            chart1.ChartAreas.Add(chartArea1);
-            chart1.Location = new Point(18, 36);
-            chart1.Name = "chart1";
-            chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Color = Color.Transparent;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series1.ShadowColor = Color.Transparent;
-            series1.YValuesPerPoint = 4;
-            chart1.Series.Add(series1);
-            chart1.Size = new Size(300, 300);
-            chart1.TabIndex = 0;
-            chart1.Text = "chart1";
             // 
             // Apn_Title
             // 
@@ -333,27 +300,16 @@
             Apn_Title.TabIndex = 0;
             Apn_Title.MouseDown += Apn_Title_MouseDown;
             // 
-            // Pb_maximizar
+            // Pb_Close
             // 
-            Pb_maximizar.Image = (Image)resources.GetObject("Pb_maximizar.Image");
-            Pb_maximizar.Location = new Point(797, 2);
-            Pb_maximizar.Name = "Pb_maximizar";
-            Pb_maximizar.Size = new Size(20, 20);
-            Pb_maximizar.SizeMode = PictureBoxSizeMode.StretchImage;
-            Pb_maximizar.TabIndex = 3;
-            Pb_maximizar.TabStop = false;
-            Pb_maximizar.Click += Pb_maximizar_Click;
-            // 
-            // Pb_Restaurar
-            // 
-            Pb_Restaurar.Image = (Image)resources.GetObject("Pb_Restaurar.Image");
-            Pb_Restaurar.Location = new Point(797, 2);
-            Pb_Restaurar.Name = "Pb_Restaurar";
-            Pb_Restaurar.Size = new Size(20, 20);
-            Pb_Restaurar.SizeMode = PictureBoxSizeMode.StretchImage;
-            Pb_Restaurar.TabIndex = 4;
-            Pb_Restaurar.TabStop = false;
-            Pb_Restaurar.Click += Pb_Restaurar_Click;
+            Pb_Close.Image = (Image)resources.GetObject("Pb_Close.Image");
+            Pb_Close.Location = new Point(823, 2);
+            Pb_Close.Name = "Pb_Close";
+            Pb_Close.Size = new Size(20, 20);
+            Pb_Close.SizeMode = PictureBoxSizeMode.StretchImage;
+            Pb_Close.TabIndex = 1;
+            Pb_Close.TabStop = false;
+            Pb_Close.Click += pictureBox1_Click;
             // 
             // Pb_Minimizar
             // 
@@ -366,16 +322,27 @@
             Pb_Minimizar.TabStop = false;
             Pb_Minimizar.Click += pictureBox2_Click;
             // 
-            // Pb_Close
+            // Pb_Restaurar
             // 
-            Pb_Close.Image = (Image)resources.GetObject("Pb_Close.Image");
-            Pb_Close.Location = new Point(823, 2);
-            Pb_Close.Name = "Pb_Close";
-            Pb_Close.Size = new Size(20, 20);
-            Pb_Close.SizeMode = PictureBoxSizeMode.StretchImage;
-            Pb_Close.TabIndex = 1;
-            Pb_Close.TabStop = false;
-            Pb_Close.Click += pictureBox1_Click;
+            Pb_Restaurar.Image = (Image)resources.GetObject("Pb_Restaurar.Image");
+            Pb_Restaurar.Location = new Point(797, 2);
+            Pb_Restaurar.Name = "Pb_Restaurar";
+            Pb_Restaurar.Size = new Size(20, 20);
+            Pb_Restaurar.SizeMode = PictureBoxSizeMode.StretchImage;
+            Pb_Restaurar.TabIndex = 4;
+            Pb_Restaurar.TabStop = false;
+            Pb_Restaurar.Click += Pb_Restaurar_Click;
+            // 
+            // Pb_maximizar
+            // 
+            Pb_maximizar.Image = (Image)resources.GetObject("Pb_maximizar.Image");
+            Pb_maximizar.Location = new Point(797, 2);
+            Pb_maximizar.Name = "Pb_maximizar";
+            Pb_maximizar.Size = new Size(20, 20);
+            Pb_maximizar.SizeMode = PictureBoxSizeMode.StretchImage;
+            Pb_maximizar.TabIndex = 3;
+            Pb_maximizar.TabStop = false;
+            Pb_maximizar.Click += Pb_maximizar_Click;
             // 
             // Frm_Menu
             // 
@@ -398,14 +365,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             alignedPanel1.ResumeLayout(false);
             Pn_Content.ResumeLayout(false);
-            Pn_SubContent.ResumeLayout(false);
-            Pn_Body.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
             Apn_Title.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)Pb_maximizar).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Pb_Restaurar).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Pb_Minimizar).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb_Close).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Pb_Minimizar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Pb_Restaurar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Pb_maximizar).EndInit();
             ResumeLayout(false);
         }
 
@@ -414,13 +378,7 @@
         private CapaPresentacion.ComponentsUI.UserInfo userInfo1;
         private Panel Pn_Menu;
         private Panel Pn_Content;
-        private Panel Pn_SubContent;
         private Table.AlignedPanel alignedPanel1;
-        private PictureBox Pb_Close;
-        private Table.AlignedPanel Apn_Title;
-        private PictureBox Pb_maximizar;
-        private PictureBox Pb_Minimizar;
-        private PictureBox Pb_Restaurar;
         private PictureBox pictureBox1;
         private Panel Pn_Body;
         private Table.AlignedPanel alignedPanel2;
@@ -433,6 +391,11 @@
         private CapaPresentacion.ComponentsUI.IconsModernButtons IcBtn_customer;
         private Table.AlignedPanel alignedPanel6;
         private CapaPresentacion.ComponentsUI.IconsModernButtons IcBtn_wrench;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private Panel panel1;
+        private Table.AlignedPanel Apn_Title;
+        private PictureBox Pb_maximizar;
+        private PictureBox Pb_Restaurar;
+        private PictureBox Pb_Minimizar;
+        private PictureBox Pb_Close;
     }
 }
