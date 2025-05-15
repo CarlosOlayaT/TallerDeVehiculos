@@ -43,12 +43,7 @@ namespace CapaPresentacion.ComponentsUI
             set { label1.Text = value; }
         }
         [Category("Botones Modernos")]
-        public Color BackgroundColor
-        {
-            get { return roundedPanel1.StateColor; }
-            set { roundedPanel1.StateColor = value; }
 
-        }
         private void Clicked(object sender, EventArgs e)
         {
             UseClicked?.Invoke(this, e);

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class Frm_Customer : Form
+    public partial class UC_Service : UserControl
     {
-        public Frm_Customer()
+        public UC_Service()
         {
             InitializeComponent();
         }

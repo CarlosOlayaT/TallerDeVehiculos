@@ -1,6 +1,7 @@
 
 using CapaPresentacion;
 using CapaPresentacion.ComponentsUI;
+using System;
 using System.Diagnostics;
 using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
@@ -27,11 +28,11 @@ namespace TallerDeVehiculos
                           ControlStyles.OptimizedDoubleBuffer, true);
             this.UpdateStyles();
 
-            int w = (int)(Screen.PrimaryScreen.WorkingArea.Width * 0.56);
-            int h = (int)(Screen.PrimaryScreen.WorkingArea.Height * 0.74);
+            int w = (int)(Screen.FromControl(this).WorkingArea.Width * 0.56);
+            int h = (int)(Screen.FromControl(this).WorkingArea.Height * 0.74);
             //Debug.WriteLine($"{w},{h}");
             this.Size = new Size(w, h);
-            Pn_Menu.Size = new Size((int)(this.Size.Width * 0.22), this.Size.Height);
+            //Pn_Menu.Size = new Size((int)(this.Size.Width * 0.22), this.Size.Height);
         }
 
 
@@ -48,7 +49,10 @@ namespace TallerDeVehiculos
 
         private void Pb_maximizar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            Rectangle workingArea = Screen.FromControl(this).WorkingArea;
+            this.Location = workingArea.Location;
+            this.Size = workingArea.Size;
+
             Pb_maximizar.Visible = false;
             Pb_Restaurar.Visible = true;
         }
@@ -56,9 +60,13 @@ namespace TallerDeVehiculos
         private void Pb_Restaurar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
+            int w = (int)(Screen.FromControl(this).WorkingArea.Width * 0.56);
+            int h = (int)(Screen.FromControl(this).WorkingArea.Height * 0.74);
+            this.Size = new Size(w, h); // o el tamaño que tenías antes
+            this.CenterToScreen(); // opcional, para centrarlo
+
             Pb_maximizar.Visible = true;
             Pb_Restaurar.Visible = false;
-            this.Refresh();
 
         }
 
@@ -68,18 +76,13 @@ namespace TallerDeVehiculos
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void iconsModernButtons1_UseClicked(object sender, EventArgs e)
+
+        private async void iconsModernButtons1_UseClicked(object sender, EventArgs e)
         {
             defaulticons();
             IcBtn_Dashboard.ImageIcon = CapaPresentacion.Properties.Resources.home2;
 
-            changeStyle(IcBtn_Dashboard);
-
-            Frm_DashBoard Activo = new Frm_DashBoard();
-
-            Activo.Dock = DockStyle.Fill;
-
-            Pn_Body.Controls.Add(Activo);
+            changeStyle(IcBtn_Dashboard, new UC_DashBoard());
 
         }
 
@@ -88,26 +91,32 @@ namespace TallerDeVehiculos
         {
             defaulticons();
             IcBtn_mechanic.ImageIcon = CapaPresentacion.Properties.Resources.mechanic2;
-            changeStyle(IcBtn_mechanic);
+            changeStyle(IcBtn_mechanic, new UC_Mechanic());
         }
 
         private void iconsModernButtons3_UseClicked(object sender, EventArgs e)
         {
             defaulticons();
             IcBtn_customer.ImageIcon = CapaPresentacion.Properties.Resources.Custome2;
-            changeStyle(IcBtn_customer);
+            changeStyle(IcBtn_customer, new UC_Customer());
         }
 
         private void iconsModernButtons4_UseClicked(object sender, EventArgs e)
         {
             defaulticons();
             IcBtn_wrench.ImageIcon = CapaPresentacion.Properties.Resources.wrench2;
-            changeStyle(IcBtn_wrench);
+            changeStyle(IcBtn_wrench, new UC_Service());
         }
-        private void changeStyle(IconsModernButtons iconsModernButtons)
+        private void changeStyle(IconsModernButtons iconsModernButtons, UserControl control)
         {
             iconsModernButtons.ForeColor = Color.FromArgb(10, 16, 21);
-            iconsModernButtons.BackgroundColor = Color.FromArgb(32, 192, 98);
+            iconsModernButtons.BackgroundImage = CapaPresentacion.Properties.Resources.Rectangle_3;
+            Pn_Body.SuspendLayout(); // Detener diseño temporalmente
+            Pn_Body.Controls.Clear();
+
+            control.Dock = DockStyle.Fill;
+            Pn_Body.Controls.Add(control);
+            Pn_Body.ResumeLayout();
 
         }
         private void defaulticons()
@@ -115,7 +124,7 @@ namespace TallerDeVehiculos
             IconsModernButtons[] icons = { IcBtn_customer, IcBtn_Dashboard, IcBtn_mechanic, IcBtn_wrench };
             foreach (var icon in icons)
             {
-                icon.BackgroundColor = Color.Transparent;
+                icon.BackgroundImage = null;
                 icon.ForeColor = Color.FromArgb(214, 251, 210);
             }
             IcBtn_customer.ImageIcon = CapaPresentacion.Properties.Resources.customer;

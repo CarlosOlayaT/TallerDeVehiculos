@@ -8,11 +8,10 @@ namespace CapaEntidad
 {
     public class Cliente : Persona
     {
-        public string telefono { get; set; }
         public string email { get; set; }
 
         public Cliente(string nombre, string apellido, string cedula, string telefono, string email)
-        : base(nombre, apellido, cedula)
+        : base(nombre, apellido, cedula, telefono)
         {
             this.telefono = telefono;
             this.email = email;

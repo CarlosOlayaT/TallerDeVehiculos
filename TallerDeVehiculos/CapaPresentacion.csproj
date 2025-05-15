@@ -9,15 +9,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Table" Version="1.1.5" />
+    <PackageReference Include="Table" Version="1.1.7" />
     <PackageReference Include="WinForms.DataVisualization" Version="1.10.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Frm_NewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="UC_Mechanic.cs">
+      <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
 

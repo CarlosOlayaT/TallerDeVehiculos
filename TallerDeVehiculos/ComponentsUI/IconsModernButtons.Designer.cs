@@ -28,31 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            roundedPanel1 = new Table.RoundedPanel();
             alignedPanel1 = new Table.AlignedPanel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
-            roundedPanel1.SuspendLayout();
             alignedPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // roundedPanel1
-            // 
-            roundedPanel1.BackColor = Color.Transparent;
-            roundedPanel1.Controls.Add(alignedPanel1);
-            roundedPanel1.Dock = DockStyle.Fill;
-            roundedPanel1.Location = new Point(0, 0);
-            roundedPanel1.Name = "roundedPanel1";
-            roundedPanel1.Radius.All = 15;
-            roundedPanel1.Radius.BottomLeft = 15;
-            roundedPanel1.Radius.BottomRight = 15;
-            roundedPanel1.Radius.TopLeft = 15;
-            roundedPanel1.Radius.TopRight = 15;
-            roundedPanel1.Size = new Size(240, 65);
-            roundedPanel1.StateColor = Color.White;
-            roundedPanel1.TabIndex = 0;
             // 
             // alignedPanel1
             // 
@@ -100,10 +82,9 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
-            Controls.Add(roundedPanel1);
+            Controls.Add(alignedPanel1);
             Name = "IconsModernButtons";
             Size = new Size(240, 65);
-            roundedPanel1.ResumeLayout(false);
             alignedPanel1.ResumeLayout(false);
             alignedPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -111,8 +92,6 @@
         }
 
         #endregion
-
-        private Table.RoundedPanel roundedPanel1;
         private Table.AlignedPanel alignedPanel1;
         private Label label1;
         private PictureBox pictureBox1;

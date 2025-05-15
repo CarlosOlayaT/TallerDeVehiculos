@@ -13,9 +13,9 @@ using Table;
 
 namespace CapaPresentacion
 {
-    public partial class Frm_DashBoard : UserControl
+    public partial class UC_DashBoard : UserControl
     {
-        public Frm_DashBoard()
+        public UC_DashBoard()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
@@ -31,6 +31,7 @@ namespace CapaPresentacion
             customdatagridview1.Rows.Add(new object[] { null, 547536, "Carlos Olaya", DateTime.Now, "preventivo", 432, "Completado" });
             customdatagridview1.Rows.Add(new object[] { null, 547536, "Carlos Olaya", DateTime.Now, "preventivo", 432, "Esperando" });
             customdatagridview1.Rows.Add(new object[] { null, 547536, "Carlos Olaya", DateTime.Now, "preventivo", 432, "Cancelado" });
+            //customdatagridview1.Rows.Add(new object[] { null, 547536, "Carlos Olaya", DateTime.Now, "preventivo", 432, "Cancelado" });
 
             Dictionary<string, int> Datos = new Dictionary<string, int>()
             {
@@ -47,7 +48,7 @@ namespace CapaPresentacion
                 Color.FromArgb(217, 119, 6),
                 Color.FromArgb(216, 64, 64)
             };
-
+            
             Series series = new Series()
             {
                 ChartType = SeriesChartType.Doughnut,

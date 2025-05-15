@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class Frm_Customer
+    partial class UC_Service
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,13 @@
         {
             SuspendLayout();
             // 
-            // Frm_Customer
+            // Frm_Service
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "Frm_Customer";
-            Text = "Frm_Customer";
+            Name = "Frm_Service";
+            Text = "Frm_Service";
             ResumeLayout(false);
         }
 

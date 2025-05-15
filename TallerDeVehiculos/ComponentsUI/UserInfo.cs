@@ -13,15 +13,35 @@ namespace CapaPresentacion.ComponentsUI
 {
     public partial class UserInfo : UserControl
     {
+        private int _radius = 14;
 
+        [Category("UserData")]
+        public Image BackgroundImagePanel
+        {
+            get { return this.BackgroundImage; }
+            set { this.BackgroundImage = value; }
+        }
+
+
+        [Category("UserData")]
+        public int Radius
+        {
+            get { return _radius; }
+            set
+            {
+                _radius = value;
+                RedondearEsquinas(pictureBox1, _radius); // <-- Se actualiza cada vez que cambie
+                pictureBox1.Invalidate();
+            }
+        }
         public UserInfo()
         {
             InitializeComponent();
-            RedondearEsquinas(pictureBox1, 14);
             this.DoubleBuffered = true;
+            RedondearEsquinas(pictureBox1, _radius);
         }
 
-        public static void RedondearEsquinas(PictureBox pictureBox, int radio)
+        public void RedondearEsquinas(PictureBox pictureBox, int radio)
         {
             Rectangle bounds = pictureBox.ClientRectangle;
             GraphicsPath path = new GraphicsPath();
@@ -57,13 +77,8 @@ namespace CapaPresentacion.ComponentsUI
             set { lbl_UserRol.Text = value; }
         }
         [Category("UserData")]
-        public Color StateColor
-        {
-            get { return roundedPanel1.StateColor; }
-            set { roundedPanel1.StateColor = value; }
-        }
 
-        [Category("UserData")]
+
         public Font UserNameFont
         {
             get { return lbl_UserName.Font; }

@@ -46,11 +46,11 @@
             alignedPanel1 = new Table.AlignedPanel();
             Pn_Content = new Panel();
             Pn_Body = new Panel();
-            Apn_Title = new Table.AlignedPanel();
-            Pb_Close = new PictureBox();
-            Pb_Minimizar = new PictureBox();
-            Pb_Restaurar = new PictureBox();
+            Apn_Title = new Panel();
             Pb_maximizar = new PictureBox();
+            Pb_Restaurar = new PictureBox();
+            Pb_Minimizar = new PictureBox();
+            Pb_Close = new PictureBox();
             Pn_Menu.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             alignedPanel4.SuspendLayout();
@@ -62,20 +62,23 @@
             alignedPanel1.SuspendLayout();
             Pn_Content.SuspendLayout();
             Apn_Title.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)Pb_Close).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Pb_Minimizar).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Pb_Restaurar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb_maximizar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Pb_Restaurar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Pb_Minimizar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Pb_Close).BeginInit();
             SuspendLayout();
             // 
             // userInfo1
             // 
             userInfo1.BackColor = Color.Transparent;
+            userInfo1.BackgroundImage = CapaPresentacion.Properties.Resources.Rectangle_14;
+            userInfo1.BackgroundImageLayout = ImageLayout.Stretch;
+            userInfo1.BackgroundImagePanel = CapaPresentacion.Properties.Resources.Rectangle_14;
             userInfo1.Cursor = Cursors.Hand;
             userInfo1.Location = new Point(26, 0);
             userInfo1.Name = "userInfo1";
+            userInfo1.Radius = 14;
             userInfo1.Size = new Size(184, 65);
-            userInfo1.StateColor = Color.FromArgb(30, 39, 43);
             userInfo1.TabIndex = 0;
             userInfo1.UserNameFont = new Font("Roboto", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             userInfo1.UserNameForeColor = Color.FromArgb(214, 251, 210);
@@ -133,7 +136,7 @@
             // IcBtn_Dashboard
             // 
             IcBtn_Dashboard.BackColor = Color.Transparent;
-            IcBtn_Dashboard.BackgroundColor = Color.Transparent;
+            IcBtn_Dashboard.BackgroundImageLayout = ImageLayout.Stretch;
             IcBtn_Dashboard.Cursor = Cursors.Hand;
             IcBtn_Dashboard.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             IcBtn_Dashboard.ForeColor = Color.FromArgb(214, 251, 210);
@@ -160,7 +163,7 @@
             // IcBtn_mechanic
             // 
             IcBtn_mechanic.BackColor = Color.Transparent;
-            IcBtn_mechanic.BackgroundColor = Color.Transparent;
+            IcBtn_mechanic.BackgroundImageLayout = ImageLayout.Stretch;
             IcBtn_mechanic.Cursor = Cursors.Hand;
             IcBtn_mechanic.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             IcBtn_mechanic.ForeColor = Color.FromArgb(214, 251, 210);
@@ -187,7 +190,7 @@
             // IcBtn_customer
             // 
             IcBtn_customer.BackColor = Color.Transparent;
-            IcBtn_customer.BackgroundColor = Color.Transparent;
+            IcBtn_customer.BackgroundImageLayout = ImageLayout.Stretch;
             IcBtn_customer.Cursor = Cursors.Hand;
             IcBtn_customer.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             IcBtn_customer.ForeColor = Color.FromArgb(214, 251, 210);
@@ -214,7 +217,7 @@
             // IcBtn_wrench
             // 
             IcBtn_wrench.BackColor = Color.Transparent;
-            IcBtn_wrench.BackgroundColor = Color.Transparent;
+            IcBtn_wrench.BackgroundImageLayout = ImageLayout.Stretch;
             IcBtn_wrench.Cursor = Cursors.Hand;
             IcBtn_wrench.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             IcBtn_wrench.ForeColor = Color.FromArgb(214, 251, 210);
@@ -286,8 +289,6 @@
             // Apn_Title
             // 
             Apn_Title.BackColor = Color.FromArgb(10, 16, 21);
-            Apn_Title.BackgroundColor = Color.FromArgb(10, 16, 21);
-            Apn_Title.ContentAlignment = ContentAlignment.MiddleRight;
             Apn_Title.Controls.Add(Pb_maximizar);
             Apn_Title.Controls.Add(Pb_Restaurar);
             Apn_Title.Controls.Add(Pb_Minimizar);
@@ -295,37 +296,27 @@
             Apn_Title.Dock = DockStyle.Top;
             Apn_Title.Location = new Point(0, 0);
             Apn_Title.Name = "Apn_Title";
-            Apn_Title.Radius = 1;
             Apn_Title.Size = new Size(843, 25);
             Apn_Title.TabIndex = 0;
             Apn_Title.MouseDown += Apn_Title_MouseDown;
             // 
-            // Pb_Close
+            // Pb_maximizar
             // 
-            Pb_Close.Image = (Image)resources.GetObject("Pb_Close.Image");
-            Pb_Close.Location = new Point(823, 2);
-            Pb_Close.Name = "Pb_Close";
-            Pb_Close.Size = new Size(20, 20);
-            Pb_Close.SizeMode = PictureBoxSizeMode.StretchImage;
-            Pb_Close.TabIndex = 1;
-            Pb_Close.TabStop = false;
-            Pb_Close.Click += pictureBox1_Click;
-            // 
-            // Pb_Minimizar
-            // 
-            Pb_Minimizar.Image = (Image)resources.GetObject("Pb_Minimizar.Image");
-            Pb_Minimizar.Location = new Point(771, 2);
-            Pb_Minimizar.Name = "Pb_Minimizar";
-            Pb_Minimizar.Size = new Size(20, 20);
-            Pb_Minimizar.SizeMode = PictureBoxSizeMode.StretchImage;
-            Pb_Minimizar.TabIndex = 2;
-            Pb_Minimizar.TabStop = false;
-            Pb_Minimizar.Click += pictureBox2_Click;
+            Pb_maximizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Pb_maximizar.Image = (Image)resources.GetObject("Pb_maximizar.Image");
+            Pb_maximizar.Location = new Point(789, 2);
+            Pb_maximizar.Name = "Pb_maximizar";
+            Pb_maximizar.Size = new Size(20, 20);
+            Pb_maximizar.SizeMode = PictureBoxSizeMode.StretchImage;
+            Pb_maximizar.TabIndex = 3;
+            Pb_maximizar.TabStop = false;
+            Pb_maximizar.Click += Pb_maximizar_Click;
             // 
             // Pb_Restaurar
             // 
+            Pb_Restaurar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             Pb_Restaurar.Image = (Image)resources.GetObject("Pb_Restaurar.Image");
-            Pb_Restaurar.Location = new Point(797, 2);
+            Pb_Restaurar.Location = new Point(789, 2);
             Pb_Restaurar.Name = "Pb_Restaurar";
             Pb_Restaurar.Size = new Size(20, 20);
             Pb_Restaurar.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -333,16 +324,29 @@
             Pb_Restaurar.TabStop = false;
             Pb_Restaurar.Click += Pb_Restaurar_Click;
             // 
-            // Pb_maximizar
+            // Pb_Minimizar
             // 
-            Pb_maximizar.Image = (Image)resources.GetObject("Pb_maximizar.Image");
-            Pb_maximizar.Location = new Point(797, 2);
-            Pb_maximizar.Name = "Pb_maximizar";
-            Pb_maximizar.Size = new Size(20, 20);
-            Pb_maximizar.SizeMode = PictureBoxSizeMode.StretchImage;
-            Pb_maximizar.TabIndex = 3;
-            Pb_maximizar.TabStop = false;
-            Pb_maximizar.Click += Pb_maximizar_Click;
+            Pb_Minimizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Pb_Minimizar.Image = (Image)resources.GetObject("Pb_Minimizar.Image");
+            Pb_Minimizar.Location = new Point(763, 2);
+            Pb_Minimizar.Name = "Pb_Minimizar";
+            Pb_Minimizar.Size = new Size(20, 20);
+            Pb_Minimizar.SizeMode = PictureBoxSizeMode.StretchImage;
+            Pb_Minimizar.TabIndex = 2;
+            Pb_Minimizar.TabStop = false;
+            Pb_Minimizar.Click += pictureBox2_Click;
+            // 
+            // Pb_Close
+            // 
+            Pb_Close.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Pb_Close.Image = (Image)resources.GetObject("Pb_Close.Image");
+            Pb_Close.Location = new Point(815, 2);
+            Pb_Close.Name = "Pb_Close";
+            Pb_Close.Size = new Size(20, 20);
+            Pb_Close.SizeMode = PictureBoxSizeMode.StretchImage;
+            Pb_Close.TabIndex = 1;
+            Pb_Close.TabStop = false;
+            Pb_Close.Click += pictureBox1_Click;
             // 
             // Frm_Menu
             // 
@@ -366,10 +370,10 @@
             alignedPanel1.ResumeLayout(false);
             Pn_Content.ResumeLayout(false);
             Apn_Title.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)Pb_Close).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Pb_Minimizar).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Pb_Restaurar).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb_maximizar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Pb_Restaurar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Pb_Minimizar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Pb_Close).EndInit();
             ResumeLayout(false);
         }
 
@@ -392,7 +396,7 @@
         private Table.AlignedPanel alignedPanel6;
         private CapaPresentacion.ComponentsUI.IconsModernButtons IcBtn_wrench;
         private Panel panel1;
-        private Table.AlignedPanel Apn_Title;
+        private Panel Apn_Title;
         private PictureBox Pb_maximizar;
         private PictureBox Pb_Restaurar;
         private PictureBox Pb_Minimizar;

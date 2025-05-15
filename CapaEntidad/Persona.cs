@@ -12,12 +12,14 @@ namespace CapaEntidad
         public string apellido { get; set; }
         public string nombre { get; set; }
         public DateTime FechaRegistro = DateTime.Now;
+        public string telefono { get; set; }
         
-        public Persona(string nombre, string apellido, string cedula)
+        public Persona(string nombre, string apellido, string cedula, string telefono)
         {
             this.nombre = nombre;
             this.apellido = apellido;
             this.cedula = cedula;
+            this.telefono = telefono;
         }
 
         public override string ToString()
