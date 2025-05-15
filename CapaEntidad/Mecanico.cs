@@ -8,21 +8,26 @@ namespace CapaEntidad
 {
     public class Mecanico : Persona
     {
-     
+
         public string Especialidad { get; set; }
         public int AniosExperiencia { get; set; }
+        public bool Estado { get; set; } = true;
 
 
-        public Mecanico(string nombre, string apellido, string cedula, string especialidad, int aniosExperiencia) : base( nombre,  apellido,  cedula)
+        public Mecanico(string nombre, string apellido, string cedula, string telefono, string especialidad, int aniosExperiencia) : base(nombre, apellido, cedula, telefono)
         {
-            this.Especialidad= especialidad;
-            this.AniosExperiencia= aniosExperiencia;
+            this.Especialidad = especialidad;
+            this.AniosExperiencia = aniosExperiencia;
+        }
+        public Mecanico() : base()
+        {
+
         }
 
         public override string ToString()
         {
             return $"Mecanico| {base.ToString()} Especialidad: {Especialidad}, Años de experiencia: {AniosExperiencia}";
         }
-        
+
     }
 }

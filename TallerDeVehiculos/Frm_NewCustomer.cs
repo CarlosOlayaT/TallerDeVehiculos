@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CapaEntidad;
+using CapaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,7 @@ namespace CapaPresentacion
     public partial class Frm_NewCustomer : Form
     {
 
+        private CNCliente CNCliente = new CNCliente();
         public Frm_NewCustomer()
         {
             InitializeComponent();
@@ -44,21 +47,6 @@ namespace CapaPresentacion
 
             this.Region = new Region(path);
             base.OnPaint(e);
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void roundedLabel1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void roundedLabel1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void roundedLabel1_UseClicked(object sender, EventArgs e)
@@ -94,6 +82,41 @@ namespace CapaPresentacion
         {
             btn_create.ForeColor = Color.FromArgb(32, 192, 98);
             btn_create.StateColor = Color.FromArgb(4, 53, 25);
+        }
+
+        private void btn_create_UseClicked(object sender, EventArgs e)
+        {
+
+            try
+            {
+                Cliente cliente = new Cliente()
+                {
+                    nombre = txt_name.Text,
+                    apellido = txt_lastname.Text,
+                    cedula = txt_dni.Text,
+                    telefono = txt_phone.Text,
+                    email = txt_email.Text,
+                };
+                CNCliente.AgregarCliente(cliente);
+
+                MessageBox.Show("Registro del cliente exitoso!.", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Clean();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+        }
+        private void Clean()
+        {
+            txt_name.Text = string.Empty;
+            txt_lastname.Text = string.Empty;
+            txt_dni.Text = string.Empty;
+            txt_email.Text = string.Empty;
+            txt_phone.Text = string.Empty;
+
         }
     }
 }

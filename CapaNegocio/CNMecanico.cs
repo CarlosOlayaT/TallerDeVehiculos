@@ -19,29 +19,52 @@ namespace CapaNegocio
             {
                 throw new ArgumentException("EL campo del nombre esta vacio");
             }
-            if (!Regex.IsMatch(mecanico.nombre, @"^[A-Za-zÑñ\s]{3,}$ "))
+            if (!Regex.IsMatch(mecanico.nombre, @"^[A-Za-zÑñ\s]"))
             {
-                throw new ArgumentException("El campo del nombre solo debe tener letras y no debe tener un minimo de 3 letras");
+                throw new ArgumentException("El campo del nombre solo debe tener letras");
+            }
+            if (mecanico.nombre.Length < 3)
+            {
+                throw new ArgumentException("El nombre debe tener un minimo de 3 letras");
             }
 
             //validacion del apellido
             if (string.IsNullOrWhiteSpace(mecanico.apellido))
             {
-                throw new ArgumentException("EL campo del apellido esta vacion");
+                throw new ArgumentException("EL campo del apellido esta vacio");
             }
-            if (!Regex.IsMatch(mecanico.apellido, @"^[A-Za-zÑñ\s]{3,}$ "))
+            if (!Regex.IsMatch(mecanico.apellido, @"^[A-Za-zÑñ\s]"))
             {
-                throw new ArgumentException("El campo del apellido solo debe tener letras y no debe tener un minimo de 3 letras");
+                throw new ArgumentException("El campo del apellido solo debe tener letras");
             }
+            if (mecanico.apellido.Length < 3)
+            {
+                throw new ArgumentException("El apellido debe tener un minimo de 3 letras");
+            }
+
 
             //validacion de la especialidad
             if (string.IsNullOrWhiteSpace(mecanico.Especialidad))
             {
                 throw new ArgumentException("EL campo de la especialidad esta vacio");
             }
-            if (!Regex.IsMatch(mecanico.Especialidad, @"^[A-Za-zÑñ\s]{3,}$ "))
+            if (!Regex.IsMatch(mecanico.Especialidad, @"^[A-Za-zÑñ\s]"))
             {
-                throw new ArgumentException("El campo de la especialidad solo debe tener letras y no debe tener un minimo de 3 letras");
+                throw new ArgumentException("El campo de la especialidad solo debe tener letras");
+            }
+            if (mecanico.Especialidad.Length < 3)
+            {
+                throw new ArgumentException("La especialidad debe tener un minimo de 3 letras");
+            }
+
+            if (mecanico.cedula.Length != 10)
+            {
+                throw new ArgumentException("La cedula debe de tener 10 digitos");
+            }
+
+            if (mecanico.telefono.Length != 10)
+            {
+                throw new ArgumentException("El telefono debe de tener 10 digitos");
             }
 
             //validacion de los años de experiencia
@@ -51,11 +74,11 @@ namespace CapaNegocio
             }
 
 
-            
-            
 
 
-        CDAlmacenMecanico.AgregarMecanico(mecanico);
+
+
+            CDAlmacenMecanico.AgregarMecanico(mecanico);
         }
 
 
@@ -64,5 +87,10 @@ namespace CapaNegocio
             CDAlmacenMecanico.RemoverMecanico(mecanico);
         }
 
+
+        public List<Mecanico> GetMecanicoList()
+        {
+            return CDAlmacenMecanico.AlmacenMecanico;
+        }
     }
 }

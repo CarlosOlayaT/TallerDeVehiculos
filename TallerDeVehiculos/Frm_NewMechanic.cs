@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CapaEntidad;
+using CapaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CapaPresentacion
 {
@@ -20,10 +23,11 @@ namespace CapaPresentacion
             InitializeComponent();
 
         }
+        private CNMecanico CNMecanico = new CNMecanico();
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            Panel y = sender as Panel;
+            Panel y = (Panel)sender;
 
             using (Pen pen = new Pen(Color.FromArgb(141, 147, 151), 2)) // Cambia el color y grosor según desees
             {
@@ -46,20 +50,6 @@ namespace CapaPresentacion
             base.OnPaint(e);
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void roundedLabel1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void roundedLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void roundedLabel1_UseClicked(object sender, EventArgs e)
         {
@@ -95,5 +85,50 @@ namespace CapaPresentacion
             btn_create.ForeColor = Color.FromArgb(32, 192, 98);
             btn_create.StateColor = Color.FromArgb(4, 53, 25);
         }
+
+        private void btn_create_UseClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                Mecanico mecanico = new Mecanico()
+                {
+                    nombre = txt_name.Text,
+                    apellido = txt_lastname.Text,
+                    cedula = txt_dni.Text,
+                    Especialidad = txt_espec.Text,
+                    telefono = txt_phone.Text,
+                    AniosExperiencia = Convert.ToInt32(nud_yearsxp.Value)
+                };
+
+
+                CNMecanico.AgregarMecanico(mecanico);
+
+
+                MessageBox.Show("Registro del mecanico exitoso!.", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Clean();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            //1. forma
+            //mecanico.nombre= txt_name.Text;
+            //mecanico.apellido =txt_lastname.Text;
+            //2. forma
+
+
+        }
+        private void Clean()
+        {
+            txt_name.Text = string.Empty;
+            txt_lastname.Text = string.Empty;
+            txt_dni.Text = string.Empty;
+            txt_espec.Text = string.Empty;
+            txt_phone.Text = string.Empty;
+            nud_yearsxp.Value = 0;
+
+        }
+
     }
 }

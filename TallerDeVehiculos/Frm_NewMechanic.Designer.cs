@@ -33,24 +33,24 @@ namespace CapaPresentacion
             panel1 = new Panel();
             label1 = new Label();
             panel2 = new Panel();
-            numericUpDown1 = new NumericUpDown();
+            nud_yearsxp = new NumericUpDown();
             label6 = new Label();
-            textBox5 = new TextBox();
+            txt_phone = new TextBox();
             label7 = new Label();
-            textBox6 = new TextBox();
+            txt_lastname = new TextBox();
             label4 = new Label();
             label5 = new Label();
-            textBox4 = new TextBox();
+            txt_espec = new TextBox();
             label3 = new Label();
-            textBox2 = new TextBox();
+            txt_dni = new TextBox();
             label2 = new Label();
-            textBox1 = new TextBox();
+            txt_name = new TextBox();
             panel3 = new Panel();
             btn_create = new Table.RoundedLabel();
             btn_cancel = new Table.RoundedLabel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nud_yearsxp).BeginInit();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
@@ -79,18 +79,18 @@ namespace CapaPresentacion
             // panel2
             // 
             panel2.BackColor = Color.Transparent;
-            panel2.Controls.Add(numericUpDown1);
+            panel2.Controls.Add(nud_yearsxp);
             panel2.Controls.Add(label6);
-            panel2.Controls.Add(textBox5);
+            panel2.Controls.Add(txt_phone);
             panel2.Controls.Add(label7);
-            panel2.Controls.Add(textBox6);
+            panel2.Controls.Add(txt_lastname);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label5);
-            panel2.Controls.Add(textBox4);
+            panel2.Controls.Add(txt_espec);
             panel2.Controls.Add(label3);
-            panel2.Controls.Add(textBox2);
+            panel2.Controls.Add(txt_dni);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(txt_name);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 73);
             panel2.Name = "panel2";
@@ -98,16 +98,16 @@ namespace CapaPresentacion
             panel2.TabIndex = 6;
             panel2.Paint += panel1_Paint;
             // 
-            // numericUpDown1
+            // nud_yearsxp
             // 
-            numericUpDown1.BackColor = Color.FromArgb(30, 39, 43);
-            numericUpDown1.BorderStyle = BorderStyle.None;
-            numericUpDown1.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            numericUpDown1.ForeColor = Color.White;
-            numericUpDown1.Location = new Point(46, 207);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(58, 22);
-            numericUpDown1.TabIndex = 19;
+            nud_yearsxp.BackColor = Color.FromArgb(30, 39, 43);
+            nud_yearsxp.BorderStyle = BorderStyle.None;
+            nud_yearsxp.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            nud_yearsxp.ForeColor = Color.White;
+            nud_yearsxp.Location = new Point(46, 207);
+            nud_yearsxp.Name = "nud_yearsxp";
+            nud_yearsxp.Size = new Size(58, 22);
+            nud_yearsxp.TabIndex = 19;
             // 
             // label6
             // 
@@ -121,20 +121,20 @@ namespace CapaPresentacion
             label6.Text = "Number of phone";
             label6.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox5
+            // txt_phone
             // 
-            textBox5.BackColor = Color.FromArgb(30, 39, 43);
-            textBox5.BorderStyle = BorderStyle.None;
-            textBox5.CharacterCasing = CharacterCasing.Lower;
-            textBox5.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox5.ForeColor = Color.White;
-            textBox5.Location = new Point(337, 96);
-            textBox5.Margin = new Padding(10);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.PlaceholderText = "   Insert number phone";
-            textBox5.Size = new Size(252, 23);
-            textBox5.TabIndex = 11;
+            txt_phone.BackColor = Color.FromArgb(30, 39, 43);
+            txt_phone.BorderStyle = BorderStyle.None;
+            txt_phone.CharacterCasing = CharacterCasing.Lower;
+            txt_phone.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txt_phone.ForeColor = Color.White;
+            txt_phone.Location = new Point(337, 96);
+            txt_phone.Margin = new Padding(10);
+            txt_phone.Multiline = true;
+            txt_phone.Name = "txt_phone";
+            txt_phone.PlaceholderText = "   Insert number phone";
+            txt_phone.Size = new Size(252, 23);
+            txt_phone.TabIndex = 11;
             // 
             // label7
             // 
@@ -148,20 +148,20 @@ namespace CapaPresentacion
             label7.Text = "Last name";
             label7.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox6
+            // txt_lastname
             // 
-            textBox6.BackColor = Color.FromArgb(30, 39, 43);
-            textBox6.BorderStyle = BorderStyle.None;
-            textBox6.CharacterCasing = CharacterCasing.Lower;
-            textBox6.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox6.ForeColor = Color.White;
-            textBox6.Location = new Point(337, 39);
-            textBox6.Margin = new Padding(10);
-            textBox6.Multiline = true;
-            textBox6.Name = "textBox6";
-            textBox6.PlaceholderText = "   Insert last name";
-            textBox6.Size = new Size(252, 23);
-            textBox6.TabIndex = 9;
+            txt_lastname.BackColor = Color.FromArgb(30, 39, 43);
+            txt_lastname.BorderStyle = BorderStyle.None;
+            txt_lastname.CharacterCasing = CharacterCasing.Lower;
+            txt_lastname.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txt_lastname.ForeColor = Color.White;
+            txt_lastname.Location = new Point(337, 39);
+            txt_lastname.Margin = new Padding(10);
+            txt_lastname.Multiline = true;
+            txt_lastname.Name = "txt_lastname";
+            txt_lastname.PlaceholderText = "   Insert last name";
+            txt_lastname.Size = new Size(252, 23);
+            txt_lastname.TabIndex = 9;
             // 
             // label4
             // 
@@ -187,20 +187,20 @@ namespace CapaPresentacion
             label5.Text = "Especiality";
             label5.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox4
+            // txt_espec
             // 
-            textBox4.BackColor = Color.FromArgb(30, 39, 43);
-            textBox4.BorderStyle = BorderStyle.None;
-            textBox4.CharacterCasing = CharacterCasing.Lower;
-            textBox4.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox4.ForeColor = Color.White;
-            textBox4.Location = new Point(46, 153);
-            textBox4.Margin = new Padding(10);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = "   Insert especiality";
-            textBox4.Size = new Size(252, 23);
-            textBox4.TabIndex = 5;
+            txt_espec.BackColor = Color.FromArgb(30, 39, 43);
+            txt_espec.BorderStyle = BorderStyle.None;
+            txt_espec.CharacterCasing = CharacterCasing.Lower;
+            txt_espec.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txt_espec.ForeColor = Color.White;
+            txt_espec.Location = new Point(46, 153);
+            txt_espec.Margin = new Padding(10);
+            txt_espec.Multiline = true;
+            txt_espec.Name = "txt_espec";
+            txt_espec.PlaceholderText = "   Insert especiality";
+            txt_espec.Size = new Size(252, 23);
+            txt_espec.TabIndex = 5;
             // 
             // label3
             // 
@@ -214,20 +214,20 @@ namespace CapaPresentacion
             label3.Text = "DNI";
             label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox2
+            // txt_dni
             // 
-            textBox2.BackColor = Color.FromArgb(30, 39, 43);
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.CharacterCasing = CharacterCasing.Lower;
-            textBox2.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox2.ForeColor = Color.White;
-            textBox2.Location = new Point(46, 96);
-            textBox2.Margin = new Padding(10);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "   Insert DNI";
-            textBox2.Size = new Size(252, 23);
-            textBox2.TabIndex = 3;
+            txt_dni.BackColor = Color.FromArgb(30, 39, 43);
+            txt_dni.BorderStyle = BorderStyle.None;
+            txt_dni.CharacterCasing = CharacterCasing.Lower;
+            txt_dni.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txt_dni.ForeColor = Color.White;
+            txt_dni.Location = new Point(46, 96);
+            txt_dni.Margin = new Padding(10);
+            txt_dni.Multiline = true;
+            txt_dni.Name = "txt_dni";
+            txt_dni.PlaceholderText = "   Insert DNI";
+            txt_dni.Size = new Size(252, 23);
+            txt_dni.TabIndex = 3;
             // 
             // label2
             // 
@@ -241,20 +241,20 @@ namespace CapaPresentacion
             label2.Text = "Name";
             label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // txt_name
             // 
-            textBox1.BackColor = Color.FromArgb(30, 39, 43);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.CharacterCasing = CharacterCasing.Lower;
-            textBox1.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(46, 39);
-            textBox1.Margin = new Padding(10);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "   Insert name";
-            textBox1.Size = new Size(252, 23);
-            textBox1.TabIndex = 0;
+            txt_name.BackColor = Color.FromArgb(30, 39, 43);
+            txt_name.BorderStyle = BorderStyle.None;
+            txt_name.CharacterCasing = CharacterCasing.Lower;
+            txt_name.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txt_name.ForeColor = Color.White;
+            txt_name.Location = new Point(46, 39);
+            txt_name.Margin = new Padding(10);
+            txt_name.Multiline = true;
+            txt_name.Name = "txt_name";
+            txt_name.PlaceholderText = "   Insert name";
+            txt_name.Size = new Size(252, 23);
+            txt_name.TabIndex = 0;
             // 
             // panel3
             // 
@@ -280,6 +280,7 @@ namespace CapaPresentacion
             btn_create.StateColor = Color.FromArgb(4, 53, 25);
             btn_create.TabIndex = 1;
             btn_create.Texts = "Crear";
+            btn_create.UseClicked += btn_create_UseClicked;
             btn_create.MouseEntering += btn_create_MouseEntering;
             btn_create.MouseLeaving += btn_create_MouseLeaving;
             // 
@@ -318,7 +319,7 @@ namespace CapaPresentacion
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nud_yearsxp).EndInit();
             panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -330,17 +331,17 @@ namespace CapaPresentacion
         private Panel panel3;
         private Table.RoundedLabel btn_create;
         private Table.RoundedLabel btn_cancel;
-        private TextBox textBox1;
+        private TextBox txt_name;
         private Label label6;
-        private TextBox textBox5;
+        private TextBox txt_phone;
         private Label label7;
-        private TextBox textBox6;
+        private TextBox txt_lastname;
         private Label label4;
         private Label label5;
-        private TextBox textBox4;
+        private TextBox txt_espec;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox txt_dni;
         private Label label2;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown nud_yearsxp;
     }
 }

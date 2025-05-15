@@ -39,10 +39,10 @@
             label3 = new Label();
             label1 = new Label();
             panel5 = new Panel();
-            label4 = new Label();
+            lbl_customers = new Label();
             roundedPanel3 = new Table.RoundedPanel();
             pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
+            txt_search = new TextBox();
             panel6 = new Panel();
             customdatagridview1 = new Table.Customdatagridview();
             Check = new DataGridViewCheckBoxColumn();
@@ -162,7 +162,7 @@
             // 
             // panel5
             // 
-            panel5.Controls.Add(label4);
+            panel5.Controls.Add(lbl_customers);
             panel5.Controls.Add(roundedPanel3);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(35, 86);
@@ -171,24 +171,24 @@
             panel5.TabIndex = 4;
             panel5.Paint += panel5_Paint;
             // 
-            // label4
+            // lbl_customers
             // 
-            label4.Dock = DockStyle.Left;
-            label4.Font = new Font("Roboto", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(0, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(286, 59);
-            label4.TabIndex = 1;
-            label4.Text = "All Customer(10)";
-            label4.TextAlign = ContentAlignment.MiddleLeft;
+            lbl_customers.Dock = DockStyle.Left;
+            lbl_customers.Font = new Font("Roboto", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_customers.ForeColor = Color.White;
+            lbl_customers.Location = new Point(0, 0);
+            lbl_customers.Name = "lbl_customers";
+            lbl_customers.Size = new Size(286, 59);
+            lbl_customers.TabIndex = 1;
+            lbl_customers.Text = "All Customer(10)";
+            lbl_customers.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // roundedPanel3
             // 
             roundedPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             roundedPanel3.BackColor = Color.Transparent;
             roundedPanel3.Controls.Add(pictureBox1);
-            roundedPanel3.Controls.Add(textBox1);
+            roundedPanel3.Controls.Add(txt_search);
             roundedPanel3.Location = new Point(485, 9);
             roundedPanel3.Name = "roundedPanel3";
             roundedPanel3.Radius.All = 20;
@@ -210,17 +210,19 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // txt_search
             // 
-            textBox1.BackColor = Color.FromArgb(30, 39, 43);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(42, 10);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Search...";
-            textBox1.Size = new Size(203, 23);
-            textBox1.TabIndex = 0;
+            txt_search.BackColor = Color.FromArgb(30, 39, 43);
+            txt_search.BorderStyle = BorderStyle.None;
+            txt_search.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txt_search.ForeColor = Color.White;
+            txt_search.Location = new Point(42, 10);
+            txt_search.Multiline = true;
+            txt_search.Name = "txt_search";
+            txt_search.PlaceholderText = "Search...";
+            txt_search.Size = new Size(203, 23);
+            txt_search.TabIndex = 0;
+            txt_search.TextChanged += textBox1_TextChanged;
             // 
             // panel6
             // 
@@ -422,8 +424,8 @@
         private Panel panel10;
         private Table.RoundedPanel roundedPanel3;
         private PictureBox pictureBox1;
-        private TextBox textBox1;
-        private Label label4;
+        private TextBox txt_search;
+        private Label lbl_customers;
         private DataGridViewCheckBoxColumn Check;
         private DataGridViewTextBoxColumn Cl_Cedula;
         private DataGridViewTextBoxColumn Cl_Names;

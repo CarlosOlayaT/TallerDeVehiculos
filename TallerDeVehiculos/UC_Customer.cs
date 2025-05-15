@@ -1,10 +1,13 @@
-﻿using System;
+﻿using CapaEntidad;
+using CapaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,13 +15,28 @@ namespace CapaPresentacion
 {
     public partial class UC_Customer : UserControl
     {
+        CNCliente CNCliente = new CNCliente();
         public UC_Customer()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
-            customdatagridview1.Rows.Add(new object[] { null, 547536, "Carlos Olaya", "preventivo", 432, });
-            customdatagridview1.Rows.Add(new object[] { null, 547536, "Carlos Olaya", "preventivo", 432, });
-            customdatagridview1.Rows.Add(new object[] { null, 547536, "Carlos Olaya", "preventivo", 432, });
+            //customdatagridview1.Rows.Add(new object[] { null, 547536, "Carlos Olaya", "preventivo", 432, });
+            //customdatagridview1.Rows.Add(new object[] { null, 547536, "Carlos Olaya", "preventivo", 432, });
+            //customdatagridview1.Rows.Add(new object[] { null, 547536, "Carlos Olaya", "preventivo", 432, });
+            List<Cliente> lista = CNCliente.GetClientes();
+            lbl_customers.Text = $"All Customer({lista.Count})";
+            LoadTable(lista);
+        }
+
+        private void LoadTable(List<Cliente> lista)
+        {
+            customdatagridview1.Rows.Clear();
+           
+
+            foreach (Cliente cliente in lista)
+            {
+                customdatagridview1.Rows.Add(new object[] { false, cliente.cedula, $"{cliente.nombre} {cliente.apellido}", cliente.email, cliente.telefono });
+            }
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
@@ -44,7 +62,28 @@ namespace CapaPresentacion
             frm_NewCustomer.StartPosition = FormStartPosition.Manual;
             frm_NewCustomer.Location = new Point(centerX, centerY);
 
-            frm_NewCustomer.ShowDialog();
+
+            if (frm_NewCustomer.ShowDialog() == DialogResult.Cancel)
+            {
+                List<Cliente> lista = CNCliente.GetClientes();
+                lbl_customers.Text = $"All Customer({lista.Count})";
+                LoadTable(lista);
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            List<Cliente> lista = CNCliente.GetClientes();
+            if (Regex.IsMatch(txt_search.Text, @"[\d+]"))
+            {
+                List<Cliente> resultado = lista.Where(c => c.cedula.ToString().Contains(txt_search.Text)).ToList();
+                LoadTable(resultado);
+            }
+            else
+            {
+                List<Cliente> resultado = lista.Where(c => $"{c.nombre} {c.apellido}".ToString().Contains(txt_search.Text)).ToList();
+                LoadTable(resultado);
+            }
         }
     }
 }

@@ -16,7 +16,10 @@ namespace CapaEntidad
             this.telefono = telefono;
             this.email = email;
         }
+        public Cliente() : base()
+        {
 
+        }
         public override string ToString()
         {
             return $"Cliente [{base.ToString()} telefono={telefono}, correo={email}]";

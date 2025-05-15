@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
@@ -39,15 +39,16 @@
             label3 = new Label();
             label1 = new Label();
             panel5 = new Panel();
+            lbl_mechanics = new Label();
             roundedPanel3 = new Table.RoundedPanel();
             pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
+            txt_search = new TextBox();
             panel6 = new Panel();
             customdatagridview1 = new Table.Customdatagridview();
             Check = new DataGridViewCheckBoxColumn();
             Cl_Cedula = new DataGridViewTextBoxColumn();
             Cl_Names = new DataGridViewTextBoxColumn();
-            Cl_Email = new DataGridViewTextBoxColumn();
+            Cl_Xp = new DataGridViewTextBoxColumn();
             Cl_Especialidad = new DataGridViewTextBoxColumn();
             Cl_Telf = new DataGridViewTextBoxColumn();
             Cl_Status = new Table.AlignedPanelColumn();
@@ -57,7 +58,6 @@
             roundedLabel1 = new Table.RoundedLabel();
             panel9 = new Panel();
             panel10 = new Panel();
-            label4 = new Label();
             panel4.SuspendLayout();
             roundedPanel1.SuspendLayout();
             panel5.SuspendLayout();
@@ -164,7 +164,7 @@
             // 
             // panel5
             // 
-            panel5.Controls.Add(label4);
+            panel5.Controls.Add(lbl_mechanics);
             panel5.Controls.Add(roundedPanel3);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(35, 86);
@@ -173,12 +173,24 @@
             panel5.TabIndex = 4;
             panel5.Paint += panel5_Paint;
             // 
+            // lbl_mechanics
+            // 
+            lbl_mechanics.Dock = DockStyle.Left;
+            lbl_mechanics.Font = new Font("Roboto", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_mechanics.ForeColor = Color.White;
+            lbl_mechanics.Location = new Point(0, 0);
+            lbl_mechanics.Name = "lbl_mechanics";
+            lbl_mechanics.Size = new Size(286, 59);
+            lbl_mechanics.TabIndex = 1;
+            lbl_mechanics.Text = "All mechanic(4)";
+            lbl_mechanics.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // roundedPanel3
             // 
             roundedPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             roundedPanel3.BackColor = Color.Transparent;
             roundedPanel3.Controls.Add(pictureBox1);
-            roundedPanel3.Controls.Add(textBox1);
+            roundedPanel3.Controls.Add(txt_search);
             roundedPanel3.Location = new Point(485, 9);
             roundedPanel3.Name = "roundedPanel3";
             roundedPanel3.Radius.All = 20;
@@ -200,17 +212,19 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // txt_search
             // 
-            textBox1.BackColor = Color.FromArgb(30, 39, 43);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(42, 10);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Search...";
-            textBox1.Size = new Size(203, 23);
-            textBox1.TabIndex = 0;
+            txt_search.BackColor = Color.FromArgb(30, 39, 43);
+            txt_search.BorderStyle = BorderStyle.None;
+            txt_search.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txt_search.ForeColor = Color.White;
+            txt_search.Location = new Point(42, 10);
+            txt_search.Multiline = true;
+            txt_search.Name = "txt_search";
+            txt_search.PlaceholderText = "Search...";
+            txt_search.Size = new Size(203, 23);
+            txt_search.TabIndex = 0;
+            txt_search.TextChanged += txt_search_TextChanged;
             // 
             // panel6
             // 
@@ -240,25 +254,25 @@
             customdatagridview1.BorderStyle = BorderStyle.None;
             customdatagridview1.CellBorderStyle = DataGridViewCellBorderStyle.None;
             customdatagridview1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(30, 39, 43);
-            dataGridViewCellStyle3.Font = new Font("Roboto", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            customdatagridview1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(30, 39, 43);
+            dataGridViewCellStyle1.Font = new Font("Roboto", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            customdatagridview1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             customdatagridview1.ColumnHeadersHeight = 40;
             customdatagridview1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            customdatagridview1.Columns.AddRange(new DataGridViewColumn[] { Check, Cl_Cedula, Cl_Names, Cl_Email, Cl_Especialidad, Cl_Telf, Cl_Status });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(10, 16, 21);
-            dataGridViewCellStyle4.Font = new Font("Roboto", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(10, 16, 21);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            customdatagridview1.DefaultCellStyle = dataGridViewCellStyle4;
+            customdatagridview1.Columns.AddRange(new DataGridViewColumn[] { Check, Cl_Cedula, Cl_Names, Cl_Xp, Cl_Especialidad, Cl_Telf, Cl_Status });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(10, 16, 21);
+            dataGridViewCellStyle2.Font = new Font("Roboto", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(10, 16, 21);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            customdatagridview1.DefaultCellStyle = dataGridViewCellStyle2;
             customdatagridview1.Dock = DockStyle.Fill;
             customdatagridview1.EnableHeadersVisualStyles = false;
             customdatagridview1.Location = new Point(1, 30);
@@ -272,6 +286,7 @@
             customdatagridview1.RowTemplate.Resizable = DataGridViewTriState.False;
             customdatagridview1.Size = new Size(771, 484);
             customdatagridview1.TabIndex = 0;
+            customdatagridview1.CellPainting += customdatagridview1_CellPainting;
             // 
             // Check
             // 
@@ -291,11 +306,11 @@
             Cl_Names.Name = "Cl_Names";
             Cl_Names.ReadOnly = true;
             // 
-            // Cl_Email
+            // Cl_Xp
             // 
-            Cl_Email.HeaderText = "Email";
-            Cl_Email.Name = "Cl_Email";
-            Cl_Email.ReadOnly = true;
+            Cl_Xp.HeaderText = "Años de experiencia";
+            Cl_Xp.Name = "Cl_Xp";
+            Cl_Xp.ReadOnly = true;
             // 
             // Cl_Especialidad
             // 
@@ -381,18 +396,6 @@
             panel10.Size = new Size(773, 21);
             panel10.TabIndex = 7;
             // 
-            // label4
-            // 
-            label4.Dock = DockStyle.Left;
-            label4.Font = new Font("Roboto", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(0, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(286, 59);
-            label4.TabIndex = 1;
-            label4.Text = "Mechanic";
-            label4.TextAlign = ContentAlignment.MiddleLeft;
-            // 
             // UC_Mechanic
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -435,18 +438,18 @@
         private Panel panel8;
         private Table.RoundedPanel roundedPanel2;
         private Table.RoundedLabel roundedLabel1;
-        private DataGridViewCheckBoxColumn Check;
-        private DataGridViewTextBoxColumn Cl_Cedula;
-        private DataGridViewTextBoxColumn Cl_Names;
-        private DataGridViewTextBoxColumn Cl_Email;
-        private DataGridViewTextBoxColumn Cl_Especialidad;
-        private DataGridViewTextBoxColumn Cl_Telf;
-        private Table.AlignedPanelColumn Cl_Status;
         private Panel panel9;
         private Panel panel10;
         private Table.RoundedPanel roundedPanel3;
         private PictureBox pictureBox1;
-        private TextBox textBox1;
-        private Label label4;
+        private TextBox txt_search;
+        private Label lbl_mechanics;
+        private DataGridViewCheckBoxColumn Check;
+        private DataGridViewTextBoxColumn Cl_Cedula;
+        private DataGridViewTextBoxColumn Cl_Names;
+        private DataGridViewTextBoxColumn Cl_Xp;
+        private DataGridViewTextBoxColumn Cl_Especialidad;
+        private DataGridViewTextBoxColumn Cl_Telf;
+        private Table.AlignedPanelColumn Cl_Status;
     }
 }
