@@ -1,4 +1,6 @@
-﻿namespace TallerDeVehiculos
+﻿using CapaPresentacion.ComponentsUX;
+
+namespace TallerDeVehiculos
 {
     partial class Frm_Menu
     {
@@ -33,17 +35,17 @@
             Pn_Menu = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel1 = new Panel();
-            alignedPanel4 = new Table.AlignedPanel();
+            alignedPanel4 = new AlignedPanel();
             IcBtn_Dashboard = new CapaPresentacion.ComponentsUI.IconsModernButtons();
-            alignedPanel3 = new Table.AlignedPanel();
+            alignedPanel3 = new AlignedPanel();
             IcBtn_mechanic = new CapaPresentacion.ComponentsUI.IconsModernButtons();
-            alignedPanel5 = new Table.AlignedPanel();
+            alignedPanel5 = new AlignedPanel();
             IcBtn_customer = new CapaPresentacion.ComponentsUI.IconsModernButtons();
-            alignedPanel6 = new Table.AlignedPanel();
+            alignedPanel6 = new AlignedPanel();
             IcBtn_wrench = new CapaPresentacion.ComponentsUI.IconsModernButtons();
-            alignedPanel2 = new Table.AlignedPanel();
+            alignedPanel2 = new AlignedPanel();
             pictureBox1 = new PictureBox();
-            alignedPanel1 = new Table.AlignedPanel();
+            alignedPanel1 = new AlignedPanel();
             Pn_Content = new Panel();
             Pn_Body = new Panel();
             Apn_Title = new Panel();
@@ -382,18 +384,18 @@
         private CapaPresentacion.ComponentsUI.UserInfo userInfo1;
         private Panel Pn_Menu;
         private Panel Pn_Content;
-        private Table.AlignedPanel alignedPanel1;
+        private AlignedPanel alignedPanel1;
         private PictureBox pictureBox1;
         private Panel Pn_Body;
-        private Table.AlignedPanel alignedPanel2;
+        private AlignedPanel alignedPanel2;
         private CapaPresentacion.ComponentsUI.IconsModernButtons IcBtn_Dashboard;
         private FlowLayoutPanel flowLayoutPanel1;
-        private Table.AlignedPanel alignedPanel4;
-        private Table.AlignedPanel alignedPanel3;
+        private AlignedPanel alignedPanel4;
+        private AlignedPanel alignedPanel3;
         private CapaPresentacion.ComponentsUI.IconsModernButtons IcBtn_mechanic;
-        private Table.AlignedPanel alignedPanel5;
+        private AlignedPanel alignedPanel5;
         private CapaPresentacion.ComponentsUI.IconsModernButtons IcBtn_customer;
-        private Table.AlignedPanel alignedPanel6;
+        private AlignedPanel alignedPanel6;
         private CapaPresentacion.ComponentsUI.IconsModernButtons IcBtn_wrench;
         private Panel panel1;
         private Panel Apn_Title;

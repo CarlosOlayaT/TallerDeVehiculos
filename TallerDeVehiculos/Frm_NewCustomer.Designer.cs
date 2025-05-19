@@ -44,8 +44,8 @@ namespace CapaPresentacion
             label2 = new Label();
             txt_name = new TextBox();
             panel3 = new Panel();
-            btn_create = new Table.RoundedLabel();
-            btn_cancel = new Table.RoundedLabel();
+            btn_create = new CapaPresentacion.ComponentsUX.RoundedLabel();
+            btn_cancel = new CapaPresentacion.ComponentsUX.RoundedLabel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -300,8 +300,8 @@ namespace CapaPresentacion
         private Label label1;
         private Panel panel2;
         private Panel panel3;
-        private Table.RoundedLabel btn_create;
-        private Table.RoundedLabel btn_cancel;
+        private CapaPresentacion.ComponentsUX.RoundedLabel btn_create;
+        private CapaPresentacion.ComponentsUX.RoundedLabel btn_cancel;
         private TextBox txt_name;
         private Label label6;
         private TextBox txt_phone;

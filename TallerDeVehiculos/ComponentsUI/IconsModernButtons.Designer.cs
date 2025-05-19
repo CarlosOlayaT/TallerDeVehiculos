@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            alignedPanel1 = new Table.AlignedPanel();
+            alignedPanel1 = new CapaPresentacion.ComponentsUX.AlignedPanel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
@@ -92,7 +92,7 @@
         }
 
         #endregion
-        private Table.AlignedPanel alignedPanel1;
+        private CapaPresentacion.ComponentsUX.AlignedPanel alignedPanel1;
         private Label label1;
         private PictureBox pictureBox1;
         private Panel panel1;

@@ -9,7 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Table" Version="1.1.7" />
     <PackageReference Include="WinForms.DataVisualization" Version="1.10.0" />
   </ItemGroup>
 
@@ -19,6 +18,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="ComponentsUX\AlignedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="ComponentsUX\Customdatagridview.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="ComponentsUX\ModernTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ComponentsUX\RoundedLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ComponentsUX\RoundedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="Frm_NewCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
