@@ -108,10 +108,6 @@ namespace CapaPresentacion
 
         }
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         float total = 0;
         float totalAdd = 0;
         List<Repuesto> repuestos = new List<Repuesto>();
@@ -136,7 +132,6 @@ namespace CapaPresentacion
 
             total += repuesto.subtotal;
             lbl_total.Text = $"${total.ToString()}";
-
 
         }
 
@@ -203,11 +198,8 @@ namespace CapaPresentacion
                     anio = int.Parse(txt_anio.Text.Trim()),
                     marca = txt_marca.Text.Trim(),
                 };
-                Cliente cliente = cmb_clientes.SelectedItem as Cliente;
+                Cliente cliente = (Cliente)cmb_clientes.SelectedItem as Cliente;
                 Mecanico mecanico = cmb_mecanicos.SelectedItem as Mecanico;
-
-
-
 
                 Servicio servicio = new Servicio()
                 {
@@ -230,10 +222,24 @@ namespace CapaPresentacion
                 float subtotal = servicio.subtbase + servicio.subtrep + servicio.SubtAdd;
                 servicio.total = subtotal + (subtotal * 0.15f);
                 CNServicio cNServicio = new CNServicio();
+                CNMecanico cNMecanico = new CNMecanico();
+                cNMecanico.ChangeState(mecanico, false);
                 cNServicio.AgregarServicio(servicio);
+                Frm_Comprobante frm_Comprobante = new Frm_Comprobante(servicio);
+                Point panelScreenPos = this.PointToScreen(Point.Empty);
+
+
+                int centerX = panelScreenPos.X + (this.Width - frm_Comprobante.Width) / 2;
+                int centerY = panelScreenPos.Y + (this.Height - frm_Comprobante.Height) / 2;
+
+                frm_Comprobante.StartPosition = FormStartPosition.Manual;
+                frm_Comprobante.Location = new Point(centerX, centerY);
 
                 MessageBox.Show("Registro del mantenimiento exitoso!.", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 clean();
+                this.Close();
+                frm_Comprobante.ShowDialog();
+
             }
             catch (Exception ex)
             {
@@ -256,11 +262,29 @@ namespace CapaPresentacion
             rdb_preven.Checked = true;
         }
 
-        //private void cmb_clientes_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    Cliente cliente = cmb_clientes.SelectedItem as Cliente;
-        //    Debug.WriteLine(cliente.telefono);
+        private void txt_cant_rep_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+                return;
 
-        //}
+            if (e.KeyChar == '.' && !((TextBox)sender).Text.Contains("."))
+                return;
+
+            if (e.KeyChar == (char)Keys.Back)
+                return;
+
+            e.Handled = true;
+        }
+
+        private void txt_anio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+                return;
+
+            if (e.KeyChar == (char)Keys.Back)
+                return;
+
+            e.Handled = true;
+        }
     }
 }

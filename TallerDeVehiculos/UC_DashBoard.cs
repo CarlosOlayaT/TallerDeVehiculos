@@ -35,24 +35,23 @@ namespace CapaPresentacion
 
             List<Servicio> lista = cNServicio.GetListTable();
             customdatagridview1.DataSource = lista;
+            CNCliente cNCliente = new CNCliente();
+            lbl_vehic.Text = cNCliente.GetAll().Count.ToString();
+            CNMecanico cNMecanico = new CNMecanico();
+            lbl_revisados.Text = cNMecanico.GetAlls().Count.ToString();
+            lbl_pend.Text = lista.Count.ToString();
+
+            Dictionary<string, int> conteo = lista.GroupBy(l => l.estado).ToDictionary(g =>g.Key, g => g.Count());
 
 
-            Dictionary<string, int> Datos = new Dictionary<string, int>()
-            {
-                { "Aceptados",6 },
-                { "Devueltos",2 },
-                { "Pendientes",2 }
 
-            };
-
-            int suma = Datos.Values.Sum();
             List<Color> paleta = new List<Color>()
             {
                 Color.FromArgb(214, 251, 210),
                 Color.FromArgb(217, 119, 6),
                 Color.FromArgb(216, 64, 64)
             };
-            
+
             Series series = new Series()
             {
                 ChartType = SeriesChartType.Doughnut,
@@ -62,26 +61,30 @@ namespace CapaPresentacion
             int i = 0;
             Label[] estado = new Label[] { lbl_aceptados, lbl_devueltos, lbl_pendientes };
             Label[] estadonum = new Label[] { lbl_acept_num, lbl_devu_num, lbl_pend_num };
-            foreach (var key in Datos)
+            var labels = estado.Zip(estadonum, (lblEstado, lblNum) => (lblEstado, lblNum)).ToArray();
+            int total = conteo.Values.Sum();
+            int index = 0;
+
+            foreach (var (key, value) in conteo)
             {
-                int porc = (int)Math.Round((double)key.Value / suma * 100);
-                estado[i].Text = $"{key.Key}({porc})%";
-                estadonum[i].Text = key.Value.ToString();
-                DataPoint punto = new DataPoint();
-                punto.AxisLabel = "";
-                punto.YValues = new double[] { key.Value };
-                punto.Color = paleta[i];
-                series.Points.Add(punto);
-                i++;
+                int porc = (int)Math.Round((double)value / total * 100);
+
+                labels[index].lblEstado.Text = $"{key} ({porc}%)";
+                labels[index].lblNum.Text = value.ToString();
+
+                series.Points.Add(new DataPoint
+                {
+                    AxisLabel = "",
+                    YValues = new double[] { value },
+                    Color = paleta[index]
+                });
+
+                index++;
             }
 
             chart1.Series.Add(series);
         }
 
-        private void customdatagridview1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void customdatagridview1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {

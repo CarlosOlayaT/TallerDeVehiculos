@@ -392,6 +392,7 @@
             txt_anio.Name = "txt_anio";
             txt_anio.Size = new Size(103, 15);
             txt_anio.TabIndex = 2;
+            txt_anio.KeyPress += txt_anio_KeyPress;
             // 
             // label10
             // 
@@ -518,6 +519,7 @@
             // 
             txt_placa.BackColor = Color.FromArgb(30, 39, 43);
             txt_placa.BorderStyle = BorderStyle.None;
+            txt_placa.CharacterCasing = CharacterCasing.Upper;
             txt_placa.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txt_placa.ForeColor = Color.White;
             txt_placa.Location = new Point(2, 4);
@@ -723,7 +725,6 @@
             txt_name_rep.Name = "txt_name_rep";
             txt_name_rep.Size = new Size(101, 15);
             txt_name_rep.TabIndex = 2;
-            txt_name_rep.TextChanged += textBox5_TextChanged;
             // 
             // roundedPanel17
             // 
@@ -840,6 +841,7 @@
             txt_valor_rep.Name = "txt_valor_rep";
             txt_valor_rep.Size = new Size(35, 15);
             txt_valor_rep.TabIndex = 2;
+            txt_valor_rep.KeyPress += txt_cant_rep_KeyPress;
             // 
             // label17
             // 
@@ -881,6 +883,7 @@
             txt_cant_rep.Name = "txt_cant_rep";
             txt_cant_rep.Size = new Size(28, 15);
             txt_cant_rep.TabIndex = 2;
+            txt_cant_rep.KeyPress += txt_anio_KeyPress;
             // 
             // label16
             // 

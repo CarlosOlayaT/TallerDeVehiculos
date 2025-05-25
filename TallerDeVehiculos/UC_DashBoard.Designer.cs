@@ -32,10 +32,16 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DashBoard));
             alignedPanel1 = new Panel();
             roundedPanel1 = new Panel();
             customdatagridview1 = new ComponentsUX.Customdatagridview();
+            Check = new DataGridViewCheckBoxColumn();
+            Cl_Codigo = new DataGridViewTextBoxColumn();
+            Cl_Cliente = new DataGridViewTextBoxColumn();
+            Cl_Date = new DataGridViewTextBoxColumn();
+            Cl_Mantenim = new DataGridViewTextBoxColumn();
+            Cl_Amount = new DataGridViewTextBoxColumn();
+            Cl_Status = new ComponentsUX.AlignedPanelColumn();
             panel2 = new Panel();
             panel1 = new Panel();
             roundedPanel2 = new ComponentsUX.RoundedPanel();
@@ -74,10 +80,10 @@
             panel19 = new Panel();
             panel18 = new Panel();
             roundedPanel6 = new ComponentsUX.RoundedPanel();
-            label5 = new Label();
+            lbl_pend = new Label();
             label6 = new Label();
             pictureBox3 = new PictureBox();
-            label3 = new Label();
+            lbl_revisados = new Label();
             label4 = new Label();
             pictureBox2 = new PictureBox();
             lbl_vehic = new Label();
@@ -95,13 +101,6 @@
             panel12 = new Panel();
             panel11 = new Panel();
             panel20 = new Panel();
-            Check = new DataGridViewCheckBoxColumn();
-            Cl_Codigo = new DataGridViewTextBoxColumn();
-            Cl_Cliente = new DataGridViewTextBoxColumn();
-            Cl_Date = new DataGridViewTextBoxColumn();
-            Cl_Mantenim = new DataGridViewTextBoxColumn();
-            Cl_Amount = new DataGridViewTextBoxColumn();
-            Cl_Status = new ComponentsUX.AlignedPanelColumn();
             alignedPanel1.SuspendLayout();
             roundedPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)customdatagridview1).BeginInit();
@@ -203,6 +202,57 @@
             customdatagridview1.Size = new Size(771, 178);
             customdatagridview1.TabIndex = 0;
             customdatagridview1.CellPainting += customdatagridview1_CellPainting;
+            // 
+            // Check
+            // 
+            Check.FillWeight = 25F;
+            Check.HeaderText = "";
+            Check.Name = "Check";
+            // 
+            // Cl_Codigo
+            // 
+            Cl_Codigo.DataPropertyName = "codigo";
+            Cl_Codigo.HeaderText = "Codigo";
+            Cl_Codigo.Name = "Cl_Codigo";
+            Cl_Codigo.ReadOnly = true;
+            // 
+            // Cl_Cliente
+            // 
+            Cl_Cliente.DataPropertyName = "cliente";
+            Cl_Cliente.HeaderText = "Cliente";
+            Cl_Cliente.Name = "Cl_Cliente";
+            Cl_Cliente.ReadOnly = true;
+            // 
+            // Cl_Date
+            // 
+            Cl_Date.DataPropertyName = "Fecha";
+            Cl_Date.HeaderText = "Fecha";
+            Cl_Date.Name = "Cl_Date";
+            Cl_Date.ReadOnly = true;
+            // 
+            // Cl_Mantenim
+            // 
+            Cl_Mantenim.DataPropertyName = "Tipo";
+            Cl_Mantenim.HeaderText = "Mantenimiento";
+            Cl_Mantenim.Name = "Cl_Mantenim";
+            Cl_Mantenim.ReadOnly = true;
+            // 
+            // Cl_Amount
+            // 
+            Cl_Amount.DataPropertyName = "total";
+            Cl_Amount.HeaderText = "Monto";
+            Cl_Amount.Name = "Cl_Amount";
+            Cl_Amount.ReadOnly = true;
+            // 
+            // Cl_Status
+            // 
+            Cl_Status.DataPropertyName = "estado";
+            Cl_Status.HeaderText = "Estado";
+            Cl_Status.LabelColor = Color.FromArgb(4, 53, 25);
+            Cl_Status.Name = "Cl_Status";
+            Cl_Status.Radius = 10;
+            Cl_Status.ReadOnly = true;
+            Cl_Status.Resizable = DataGridViewTriState.True;
             // 
             // panel2
             // 
@@ -468,7 +518,7 @@
             lbl_aceptados.Name = "lbl_aceptados";
             lbl_aceptados.Size = new Size(175, 25);
             lbl_aceptados.TabIndex = 0;
-            lbl_aceptados.Text = "Aceptados";
+            lbl_aceptados.Text = "Completados (0%)";
             lbl_aceptados.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lbl_acept_num
@@ -480,6 +530,7 @@
             lbl_acept_num.Name = "lbl_acept_num";
             lbl_acept_num.Size = new Size(45, 25);
             lbl_acept_num.TabIndex = 1;
+            lbl_acept_num.Text = "0";
             lbl_acept_num.TextAlign = ContentAlignment.MiddleRight;
             // 
             // Pn_devueltos
@@ -501,7 +552,7 @@
             lbl_devueltos.Name = "lbl_devueltos";
             lbl_devueltos.Size = new Size(175, 25);
             lbl_devueltos.TabIndex = 0;
-            lbl_devueltos.Text = "Devueltos";
+            lbl_devueltos.Text = "Esperando (0%)";
             lbl_devueltos.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lbl_devu_num
@@ -513,6 +564,7 @@
             lbl_devu_num.Name = "lbl_devu_num";
             lbl_devu_num.Size = new Size(45, 25);
             lbl_devu_num.TabIndex = 1;
+            lbl_devu_num.Text = "0";
             lbl_devu_num.TextAlign = ContentAlignment.MiddleRight;
             // 
             // Pn_pendientes
@@ -534,7 +586,7 @@
             lbl_pendientes.Name = "lbl_pendientes";
             lbl_pendientes.Size = new Size(175, 25);
             lbl_pendientes.TabIndex = 0;
-            lbl_pendientes.Text = "Pendientes";
+            lbl_pendientes.Text = "Cancelados (0%)";
             lbl_pendientes.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lbl_pend_num
@@ -546,6 +598,7 @@
             lbl_pend_num.Name = "lbl_pend_num";
             lbl_pend_num.Size = new Size(45, 25);
             lbl_pend_num.TabIndex = 1;
+            lbl_pend_num.Text = "0";
             lbl_pend_num.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label1
@@ -615,10 +668,10 @@
             // roundedPanel6
             // 
             roundedPanel6.BackColor = Color.Transparent;
-            roundedPanel6.Controls.Add(label5);
+            roundedPanel6.Controls.Add(lbl_pend);
             roundedPanel6.Controls.Add(label6);
             roundedPanel6.Controls.Add(pictureBox3);
-            roundedPanel6.Controls.Add(label3);
+            roundedPanel6.Controls.Add(lbl_revisados);
             roundedPanel6.Controls.Add(label4);
             roundedPanel6.Controls.Add(pictureBox2);
             roundedPanel6.Controls.Add(lbl_vehic);
@@ -636,64 +689,64 @@
             roundedPanel6.StateColor = Color.FromArgb(30, 39, 43);
             roundedPanel6.TabIndex = 1;
             // 
-            // label5
+            // lbl_pend
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(311, 34);
-            label5.Name = "label5";
-            label5.Size = new Size(17, 18);
-            label5.TabIndex = 8;
-            label5.Text = "4";
+            lbl_pend.AutoSize = true;
+            lbl_pend.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_pend.ForeColor = Color.White;
+            lbl_pend.Location = new Point(274, 34);
+            lbl_pend.Name = "lbl_pend";
+            lbl_pend.Size = new Size(17, 18);
+            lbl_pend.TabIndex = 8;
+            lbl_pend.Text = "4";
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(310, 12);
+            label6.Location = new Point(273, 12);
             label6.Name = "label6";
-            label6.Size = new Size(83, 18);
+            label6.Size = new Size(116, 18);
             label6.TabIndex = 7;
-            label6.Text = "Pendientes";
+            label6.Text = "Mantenimientos";
             // 
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.hourglass_start;
-            pictureBox3.Location = new Point(281, 6);
+            pictureBox3.Location = new Point(244, 6);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(24, 24);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 6;
             pictureBox3.TabStop = false;
             // 
-            // label3
+            // lbl_revisados
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(177, 34);
-            label3.Name = "label3";
-            label3.Size = new Size(17, 18);
-            label3.TabIndex = 5;
-            label3.Text = "6";
+            lbl_revisados.AutoSize = true;
+            lbl_revisados.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_revisados.ForeColor = Color.White;
+            lbl_revisados.Location = new Point(159, 34);
+            lbl_revisados.Name = "lbl_revisados";
+            lbl_revisados.Size = new Size(17, 18);
+            lbl_revisados.TabIndex = 5;
+            lbl_revisados.Text = "6";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(176, 12);
+            label4.Location = new Point(158, 12);
             label4.Name = "label4";
-            label4.Size = new Size(78, 18);
+            label4.Size = new Size(81, 18);
             label4.TabIndex = 4;
-            label4.Text = "Revisados";
+            label4.Text = "Mecanicos";
             // 
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.check;
-            pictureBox2.Location = new Point(147, 6);
+            pictureBox2.Location = new Point(129, 6);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(24, 24);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -794,7 +847,7 @@
             userInfo4.TabIndex = 3;
             userInfo4.UserNameFont = new Font("Roboto", 12F, FontStyle.Bold);
             userInfo4.UserNameForeColor = Color.White;
-            userInfo4.UserPerfil = (Image)resources.GetObject("userInfo4.UserPerfil");
+            userInfo4.UserPerfil = Properties.Resources.perfil;
             userInfo4.UserPerfilName = "David Sayay";
             userInfo4.UserPerfilRol = "";
             userInfo4.UserRolFont = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -812,7 +865,7 @@
             userInfo3.TabIndex = 2;
             userInfo3.UserNameFont = new Font("Roboto", 12F, FontStyle.Bold);
             userInfo3.UserNameForeColor = Color.White;
-            userInfo3.UserPerfil = (Image)resources.GetObject("userInfo3.UserPerfil");
+            userInfo3.UserPerfil = Properties.Resources.perfil;
             userInfo3.UserPerfilName = "Melany Salazar";
             userInfo3.UserPerfilRol = "";
             userInfo3.UserRolFont = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -830,7 +883,7 @@
             userInfo2.TabIndex = 1;
             userInfo2.UserNameFont = new Font("Roboto", 12F, FontStyle.Bold);
             userInfo2.UserNameForeColor = Color.White;
-            userInfo2.UserPerfil = (Image)resources.GetObject("userInfo2.UserPerfil");
+            userInfo2.UserPerfil = Properties.Resources.perfil;
             userInfo2.UserPerfilName = "Samuel Cadena";
             userInfo2.UserPerfilRol = "";
             userInfo2.UserRolFont = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -848,7 +901,7 @@
             userInfo1.TabIndex = 0;
             userInfo1.UserNameFont = new Font("Roboto", 12F, FontStyle.Bold);
             userInfo1.UserNameForeColor = Color.White;
-            userInfo1.UserPerfil = (Image)resources.GetObject("userInfo1.UserPerfil");
+            userInfo1.UserPerfil = Properties.Resources.perfil;
             userInfo1.UserPerfilName = "Carlos Olaya";
             userInfo1.UserPerfilRol = "";
             userInfo1.UserRolFont = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -877,57 +930,6 @@
             panel20.Name = "panel20";
             panel20.Size = new Size(35, 743);
             panel20.TabIndex = 0;
-            // 
-            // Check
-            // 
-            Check.FillWeight = 25F;
-            Check.HeaderText = "";
-            Check.Name = "Check";
-            // 
-            // Cl_Codigo
-            // 
-            Cl_Codigo.DataPropertyName = "codigo";
-            Cl_Codigo.HeaderText = "Codigo";
-            Cl_Codigo.Name = "Cl_Codigo";
-            Cl_Codigo.ReadOnly = true;
-            // 
-            // Cl_Cliente
-            // 
-            Cl_Cliente.DataPropertyName = "cliente";
-            Cl_Cliente.HeaderText = "Cliente";
-            Cl_Cliente.Name = "Cl_Cliente";
-            Cl_Cliente.ReadOnly = true;
-            // 
-            // Cl_Date
-            // 
-            Cl_Date.DataPropertyName = "Fecha";
-            Cl_Date.HeaderText = "Fecha";
-            Cl_Date.Name = "Cl_Date";
-            Cl_Date.ReadOnly = true;
-            // 
-            // Cl_Mantenim
-            // 
-            Cl_Mantenim.DataPropertyName = "Tipo";
-            Cl_Mantenim.HeaderText = "Mantenimiento";
-            Cl_Mantenim.Name = "Cl_Mantenim";
-            Cl_Mantenim.ReadOnly = true;
-            // 
-            // Cl_Amount
-            // 
-            Cl_Amount.DataPropertyName = "total";
-            Cl_Amount.HeaderText = "Monto";
-            Cl_Amount.Name = "Cl_Amount";
-            Cl_Amount.ReadOnly = true;
-            // 
-            // Cl_Status
-            // 
-            Cl_Status.DataPropertyName = "estado";
-            Cl_Status.HeaderText = "Estado";
-            Cl_Status.LabelColor = Color.FromArgb(4, 53, 25);
-            Cl_Status.Name = "Cl_Status";
-            Cl_Status.Radius = 10;
-            Cl_Status.ReadOnly = true;
-            Cl_Status.Resizable = DataGridViewTriState.True;
             // 
             // UC_DashBoard
             // 
@@ -1014,10 +1016,10 @@
         private Panel panel6;
         private Label label2;
         private PictureBox pictureBox1;
-        private Label label5;
+        private Label lbl_pend;
         private Label label6;
         private PictureBox pictureBox3;
-        private Label label3;
+        private Label lbl_revisados;
         private Label label4;
         private PictureBox pictureBox2;
         private Label lbl_vehic;

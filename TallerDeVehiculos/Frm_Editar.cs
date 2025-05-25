@@ -47,6 +47,15 @@ namespace CapaPresentacion
             servicio.estado = comboBox1.SelectedItem.ToString();
             CNServicio cNServicio = new CNServicio();
             cNServicio.ChangeState(servicio);
+            CNMecanico Cnmecanico = new CNMecanico();
+            if (comboBox1.SelectedIndex != 1)
+            {
+                Cnmecanico.ChangeState(servicio.mecanico, true);
+            }
+            else
+            {
+                Cnmecanico.ChangeState(servicio.mecanico, false);
+            }
             this.Close();
         }
 

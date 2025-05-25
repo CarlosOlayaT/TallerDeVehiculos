@@ -121,6 +121,17 @@ namespace CapaNegocio
                     Estado = p.Estado
                 }).ToList();
         }
+        public void ChangeState(Mecanico mecanico, bool estado)
+        {
+            List<Mecanico> mecanicos = CDAlmacenMecanico.AlmacenMecanico;
+
+            int indice = mecanicos.FindIndex(s => s.cedula == mecanico.cedula);
+
+            if (indice > -1)
+            {
+                mecanicos[indice].Estado = estado;
+            }
+        }
 
     }
 }

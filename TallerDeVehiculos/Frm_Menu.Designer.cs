@@ -84,7 +84,7 @@ namespace TallerDeVehiculos
             userInfo1.TabIndex = 0;
             userInfo1.UserNameFont = new Font("Roboto", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             userInfo1.UserNameForeColor = Color.FromArgb(214, 251, 210);
-            userInfo1.UserPerfil = (Image)resources.GetObject("userInfo1.UserPerfil");
+            userInfo1.UserPerfil = CapaPresentacion.Properties.Resources.perfil;
             userInfo1.UserPerfilName = "Benito Camelo";
             userInfo1.UserPerfilRol = "Admin";
             userInfo1.UserRolFont = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
