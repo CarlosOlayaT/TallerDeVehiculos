@@ -87,10 +87,40 @@ namespace CapaNegocio
             CDAlmacenMecanico.RemoverMecanico(mecanico);
         }
 
-
-        public List<Mecanico> GetMecanicoList()
+        public List<Mecanico> GetAlls()
         {
+
             return CDAlmacenMecanico.AlmacenMecanico;
         }
+        public List<Mecanico> GetMecanicoList()
+        {
+            List<Mecanico> mecanicos = CDAlmacenMecanico.AlmacenMecanico; 
+            return mecanicos.Select(p => new Mecanico
+            {
+                cedula = p.cedula,
+                nombre = $"{p.nombre} {p.apellido}",
+                AniosExperiencia = p.AniosExperiencia,
+                Especialidad = p.Especialidad,
+                telefono = p.telefono,
+                Estado = p.Estado
+            }).ToList();
+        }
+
+        public List<Mecanico> GetListTable(string filtro)
+        {
+            List<Mecanico> mecanicos = CDAlmacenMecanico.AlmacenMecanico; 
+            return mecanicos.Where(p => p.nombre.Contains(filtro, StringComparison.OrdinalIgnoreCase) ||
+            p.cedula.Contains(filtro, StringComparison.OrdinalIgnoreCase))
+                .Select(p => new Mecanico
+                {
+                    cedula = p.cedula,
+                    nombre = $"{p.nombre} {p.apellido}",
+                    AniosExperiencia = p.AniosExperiencia,
+                    Especialidad = p.Especialidad,
+                    telefono = p.telefono,
+                    Estado = p.Estado
+                }).ToList();
+        }
+
     }
 }

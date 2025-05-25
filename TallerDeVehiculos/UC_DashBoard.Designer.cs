@@ -35,30 +35,28 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DashBoard));
             alignedPanel1 = new Panel();
             roundedPanel1 = new Panel();
-            customdatagridview1 = new CapaPresentacion.ComponentsUX.Customdatagridview();
-            Check = new DataGridViewCheckBoxColumn();
-            Cl_Codigo = new DataGridViewTextBoxColumn();
-            Cl_Cliente = new DataGridViewTextBoxColumn();
-            Cl_Date = new DataGridViewTextBoxColumn();
-            Cl_Mantenim = new DataGridViewTextBoxColumn();
-            Cl_Amount = new DataGridViewTextBoxColumn();
-            Cl_Status = new CapaPresentacion.ComponentsUX.AlignedPanelColumn();
+            customdatagridview1 = new ComponentsUX.Customdatagridview();
             panel2 = new Panel();
             panel1 = new Panel();
-            roundedPanel2 = new CapaPresentacion.ComponentsUX.RoundedPanel();
-            roundedLabel1 = new CapaPresentacion.ComponentsUX.RoundedLabel();
+            roundedPanel2 = new ComponentsUX.RoundedPanel();
+            roundedLabel1 = new ComponentsUX.RoundedLabel();
             panel6 = new Panel();
             panel3 = new Panel();
             alignedPanel2 = new Panel();
             panel7 = new Panel();
             panel22 = new Panel();
             panel27 = new Panel();
+            panel4 = new Panel();
             pictureBox4 = new PictureBox();
+            panel24 = new Panel();
+            panel10 = new Panel();
+            panel9 = new Panel();
+            panel5 = new Panel();
             panel13 = new Panel();
             panel16 = new Panel();
             panel17 = new Panel();
-            roundedPanel5 = new CapaPresentacion.ComponentsUX.RoundedPanel();
-            alignedPanel3 = new CapaPresentacion.ComponentsUX.AlignedPanel();
+            roundedPanel5 = new ComponentsUX.RoundedPanel();
+            alignedPanel3 = new ComponentsUX.AlignedPanel();
             panel8 = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             Pn_aceptados = new Panel();
@@ -75,7 +73,7 @@
             chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             panel19 = new Panel();
             panel18 = new Panel();
-            roundedPanel6 = new CapaPresentacion.ComponentsUX.RoundedPanel();
+            roundedPanel6 = new ComponentsUX.RoundedPanel();
             label5 = new Label();
             label6 = new Label();
             pictureBox3 = new PictureBox();
@@ -97,11 +95,13 @@
             panel12 = new Panel();
             panel11 = new Panel();
             panel20 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
-            panel9 = new Panel();
-            panel10 = new Panel();
-            panel24 = new Panel();
+            Check = new DataGridViewCheckBoxColumn();
+            Cl_Codigo = new DataGridViewTextBoxColumn();
+            Cl_Cliente = new DataGridViewTextBoxColumn();
+            Cl_Date = new DataGridViewTextBoxColumn();
+            Cl_Mantenim = new DataGridViewTextBoxColumn();
+            Cl_Amount = new DataGridViewTextBoxColumn();
+            Cl_Status = new ComponentsUX.AlignedPanelColumn();
             alignedPanel1.SuspendLayout();
             roundedPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)customdatagridview1).BeginInit();
@@ -109,6 +109,7 @@
             panel7.SuspendLayout();
             panel22.SuspendLayout();
             panel27.SuspendLayout();
+            panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel13.SuspendLayout();
             panel16.SuspendLayout();
@@ -127,7 +128,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel23.SuspendLayout();
-            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // alignedPanel1
@@ -203,51 +203,6 @@
             customdatagridview1.Size = new Size(771, 178);
             customdatagridview1.TabIndex = 0;
             customdatagridview1.CellPainting += customdatagridview1_CellPainting;
-            // 
-            // Check
-            // 
-            Check.FillWeight = 25F;
-            Check.HeaderText = "";
-            Check.Name = "Check";
-            // 
-            // Cl_Codigo
-            // 
-            Cl_Codigo.HeaderText = "Codigo";
-            Cl_Codigo.Name = "Cl_Codigo";
-            Cl_Codigo.ReadOnly = true;
-            // 
-            // Cl_Cliente
-            // 
-            Cl_Cliente.HeaderText = "Cliente";
-            Cl_Cliente.Name = "Cl_Cliente";
-            Cl_Cliente.ReadOnly = true;
-            // 
-            // Cl_Date
-            // 
-            Cl_Date.HeaderText = "Fecha";
-            Cl_Date.Name = "Cl_Date";
-            Cl_Date.ReadOnly = true;
-            // 
-            // Cl_Mantenim
-            // 
-            Cl_Mantenim.HeaderText = "Mantenimiento";
-            Cl_Mantenim.Name = "Cl_Mantenim";
-            Cl_Mantenim.ReadOnly = true;
-            // 
-            // Cl_Amount
-            // 
-            Cl_Amount.HeaderText = "Monto";
-            Cl_Amount.Name = "Cl_Amount";
-            Cl_Amount.ReadOnly = true;
-            // 
-            // Cl_Status
-            // 
-            Cl_Status.HeaderText = "Estado";
-            Cl_Status.LabelColor = Color.FromArgb(4, 53, 25);
-            Cl_Status.Name = "Cl_Status";
-            Cl_Status.Radius = 10;
-            Cl_Status.ReadOnly = true;
-            Cl_Status.Resizable = DataGridViewTriState.True;
             // 
             // panel2
             // 
@@ -356,6 +311,19 @@
             panel27.Size = new Size(467, 431);
             panel27.TabIndex = 4;
             // 
+            // panel4
+            // 
+            panel4.Controls.Add(pictureBox4);
+            panel4.Controls.Add(panel24);
+            panel4.Controls.Add(panel10);
+            panel4.Controls.Add(panel9);
+            panel4.Controls.Add(panel5);
+            panel4.Dock = DockStyle.Fill;
+            panel4.Location = new Point(35, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(397, 231);
+            panel4.TabIndex = 4;
+            // 
             // pictureBox4
             // 
             pictureBox4.Dock = DockStyle.Fill;
@@ -366,6 +334,38 @@
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 3;
             pictureBox4.TabStop = false;
+            // 
+            // panel24
+            // 
+            panel24.Dock = DockStyle.Top;
+            panel24.Location = new Point(10, 0);
+            panel24.Name = "panel24";
+            panel24.Size = new Size(377, 10);
+            panel24.TabIndex = 7;
+            // 
+            // panel10
+            // 
+            panel10.Dock = DockStyle.Bottom;
+            panel10.Location = new Point(10, 221);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(377, 10);
+            panel10.TabIndex = 6;
+            // 
+            // panel9
+            // 
+            panel9.Dock = DockStyle.Right;
+            panel9.Location = new Point(387, 0);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(10, 231);
+            panel9.TabIndex = 5;
+            // 
+            // panel5
+            // 
+            panel5.Dock = DockStyle.Left;
+            panel5.Location = new Point(0, 0);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(10, 231);
+            panel5.TabIndex = 4;
             // 
             // panel13
             // 
@@ -878,52 +878,58 @@
             panel20.Size = new Size(35, 743);
             panel20.TabIndex = 0;
             // 
-            // panel4
+            // Check
             // 
-            panel4.Controls.Add(pictureBox4);
-            panel4.Controls.Add(panel24);
-            panel4.Controls.Add(panel10);
-            panel4.Controls.Add(panel9);
-            panel4.Controls.Add(panel5);
-            panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(35, 0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(397, 231);
-            panel4.TabIndex = 4;
+            Check.FillWeight = 25F;
+            Check.HeaderText = "";
+            Check.Name = "Check";
             // 
-            // panel5
+            // Cl_Codigo
             // 
-            panel5.Dock = DockStyle.Left;
-            panel5.Location = new Point(0, 0);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(10, 231);
-            panel5.TabIndex = 4;
+            Cl_Codigo.DataPropertyName = "codigo";
+            Cl_Codigo.HeaderText = "Codigo";
+            Cl_Codigo.Name = "Cl_Codigo";
+            Cl_Codigo.ReadOnly = true;
             // 
-            // panel9
+            // Cl_Cliente
             // 
-            panel9.Dock = DockStyle.Right;
-            panel9.Location = new Point(387, 0);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(10, 231);
-            panel9.TabIndex = 5;
+            Cl_Cliente.DataPropertyName = "cliente";
+            Cl_Cliente.HeaderText = "Cliente";
+            Cl_Cliente.Name = "Cl_Cliente";
+            Cl_Cliente.ReadOnly = true;
             // 
-            // panel10
+            // Cl_Date
             // 
-            panel10.Dock = DockStyle.Bottom;
-            panel10.Location = new Point(10, 221);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(377, 10);
-            panel10.TabIndex = 6;
+            Cl_Date.DataPropertyName = "Fecha";
+            Cl_Date.HeaderText = "Fecha";
+            Cl_Date.Name = "Cl_Date";
+            Cl_Date.ReadOnly = true;
             // 
-            // panel24
+            // Cl_Mantenim
             // 
-            panel24.Dock = DockStyle.Top;
-            panel24.Location = new Point(10, 0);
-            panel24.Name = "panel24";
-            panel24.Size = new Size(377, 10);
-            panel24.TabIndex = 7;
+            Cl_Mantenim.DataPropertyName = "Tipo";
+            Cl_Mantenim.HeaderText = "Mantenimiento";
+            Cl_Mantenim.Name = "Cl_Mantenim";
+            Cl_Mantenim.ReadOnly = true;
             // 
-            // Frm_DashBoard
+            // Cl_Amount
+            // 
+            Cl_Amount.DataPropertyName = "total";
+            Cl_Amount.HeaderText = "Monto";
+            Cl_Amount.Name = "Cl_Amount";
+            Cl_Amount.ReadOnly = true;
+            // 
+            // Cl_Status
+            // 
+            Cl_Status.DataPropertyName = "estado";
+            Cl_Status.HeaderText = "Estado";
+            Cl_Status.LabelColor = Color.FromArgb(4, 53, 25);
+            Cl_Status.Name = "Cl_Status";
+            Cl_Status.Radius = 10;
+            Cl_Status.ReadOnly = true;
+            Cl_Status.Resizable = DataGridViewTriState.True;
+            // 
+            // UC_DashBoard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -932,7 +938,7 @@
             Controls.Add(alignedPanel1);
             Controls.Add(panel20);
             Controls.Add(panel11);
-            Name = "Frm_DashBoard";
+            Name = "UC_DashBoard";
             Size = new Size(843, 743);
             alignedPanel1.ResumeLayout(false);
             roundedPanel1.ResumeLayout(false);
@@ -941,6 +947,7 @@
             panel7.ResumeLayout(false);
             panel22.ResumeLayout(false);
             panel27.ResumeLayout(false);
+            panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel13.ResumeLayout(false);
             panel16.ResumeLayout(false);
@@ -961,7 +968,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel23.ResumeLayout(false);
             panel23.PerformLayout();
-            panel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -1005,13 +1011,6 @@
         private Panel panel22;
         private Panel panel27;
         private CapaPresentacion.ComponentsUX.RoundedPanel roundedPanel2;
-        private DataGridViewCheckBoxColumn Check;
-        private DataGridViewTextBoxColumn Cl_Codigo;
-        private DataGridViewTextBoxColumn Cl_Cliente;
-        private DataGridViewTextBoxColumn Cl_Date;
-        private DataGridViewTextBoxColumn Cl_Mantenim;
-        private DataGridViewTextBoxColumn Cl_Amount;
-        private CapaPresentacion.ComponentsUX.AlignedPanelColumn Cl_Status;
         private Panel panel6;
         private Label label2;
         private PictureBox pictureBox1;
@@ -1036,5 +1035,12 @@
         private Panel panel10;
         private Panel panel9;
         private Panel panel5;
+        private DataGridViewCheckBoxColumn Check;
+        private DataGridViewTextBoxColumn Cl_Codigo;
+        private DataGridViewTextBoxColumn Cl_Cliente;
+        private DataGridViewTextBoxColumn Cl_Date;
+        private DataGridViewTextBoxColumn Cl_Mantenim;
+        private DataGridViewTextBoxColumn Cl_Amount;
+        private ComponentsUX.AlignedPanelColumn Cl_Status;
     }
 }

@@ -11,20 +11,20 @@ namespace CapaNegocio
     public class CNServicio
     {
 
-        public static void AgregarServicio(Servicio servicio)
+        public void AgregarServicio(Servicio servicio)
         {
-            
-            if (servicio.mecanico ==null)
+
+            if (servicio.mecanico == null)
             {
                 throw new ArgumentException("El mecanico no puede ser nulo");
             }
 
-            if (servicio.mecanico ==null)
+            if (servicio.cliente == null)
             {
                 throw new ArgumentException("El nombre del cliente esta vacio");
             }
 
-            if (servicio.precio <= 0)
+            if (servicio.total <= 0)
             {
                 throw new ArgumentOutOfRangeException("El precio debe ser mayor a 0");
             }
@@ -34,13 +34,14 @@ namespace CapaNegocio
                 throw new ArgumentException("El estado del servicio esta vacio");
             }
 
-            if (string.IsNullOrEmpty(servicio.descripcion))
+            if (string.IsNullOrEmpty(servicio.diagnostico))
             {
                 throw new ArgumentException("La descripcion de servicio esta vacia");
             }
 
-            if (servicio.repuestos == null || servicio.repuestos.Count == 0) {
-                throw new ArgumentNullException("La lista de repuestos no puede estar vacia");
+            if (servicio.repuestos == null)
+            {
+                throw new ArgumentNullException("La lista de repuestos no puede ser null");
             }
 
 
@@ -48,10 +49,94 @@ namespace CapaNegocio
         }
 
 
-        public static void EliminarServicio(Servicio servicio)
+        public void EliminarServicio(Servicio servicio)
         {
             CDAlmacenServicio.RemoverServicio(servicio);
         }
 
+        public List<Servicio> GetAll()
+        {
+            return CDAlmacenServicio.AlmacenServicio;
+        }
+
+        public List<Servicio> GetListTable()
+        {
+            List<Servicio> servicios = CDAlmacenServicio.AlmacenServicio;
+            return servicios.Select(p => new Servicio
+            {
+                codigo = p.codigo,
+                cliente = p.cliente,
+                mecanico = p.mecanico,
+                estado = p.estado,
+                vehiculo = p.vehiculo,
+                tipo = p.tipo,
+                total = p.total,
+                Fecha = p.Fecha,
+            }).ToList();
+        }
+
+        public List<Servicio> GetListTable(string filtro)
+        {
+            List<Servicio> servicios = CDAlmacenServicio.AlmacenServicio;
+
+            DateTime fechaFiltro;
+            bool esFecha = DateTime.TryParse(filtro, out fechaFiltro);
+
+            return servicios.Where(p =>
+                (p.cliente.nombre.Contains(filtro, StringComparison.OrdinalIgnoreCase)) ||
+                (p.cliente.apellido.Contains(filtro, StringComparison.OrdinalIgnoreCase)) ||
+                (esFecha && p.Fecha.Date == fechaFiltro.Date)
+            )
+            .Select(p => new Servicio
+            {
+                codigo = p.codigo,
+                cliente = p.cliente,
+                mecanico = p.mecanico,
+                Fecha = p.Fecha,
+                tipo = p.tipo,
+                total = p.total,
+                vehiculo = p.vehiculo
+            }).ToList();
+
+        }
+        public List<Servicio> GetListTableCod(string filtro)
+        {
+            List<Servicio> servicios = CDAlmacenServicio.AlmacenServicio;
+
+
+            return servicios.Where(p =>
+                (p.codigo.Contains(filtro, StringComparison.OrdinalIgnoreCase))
+            )
+            .Select(p => new Servicio
+            {
+                codigo = p.codigo,
+                cliente = p.cliente,
+                mecanico = p.mecanico,
+                Fecha = p.Fecha,
+                tipo = p.tipo,
+                total = p.total,
+                vehiculo = p.vehiculo
+            }).ToList();
+
+        }
+
+        public Servicio GetServicioByCode(string codigo)
+        {
+            List<Servicio> servicios = CDAlmacenServicio.AlmacenServicio;
+
+            return servicios.Where(p => p.codigo.Equals(codigo)).FirstOrDefault();
+        }
+
+        public void ChangeState(Servicio servicio)
+        {
+            List<Servicio> servicios = CDAlmacenServicio.AlmacenServicio;
+
+            int indice = servicios.FindIndex(s => s.codigo == servicio.codigo);
+            
+            if (indice > -1)
+            {
+                servicios[indice].estado = servicio.estado;
+            }
+        }
     }
 }

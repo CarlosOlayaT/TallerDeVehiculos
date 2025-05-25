@@ -56,9 +56,37 @@ namespace CapaNegocio
         }
 
 
-        public List<Cliente> GetClientes()
+        public List<Cliente> GetAll()
         {
             return CDAlmacenCliente.AlmacenClientes;
+        }
+
+        public List<Cliente> GetClientList()
+        {
+            List<Cliente> lista = CDAlmacenCliente.AlmacenClientes;
+
+            return lista.Select(c => new Cliente
+            {
+                nombre = $"{c.nombre} {c.apellido}",
+                cedula = c.cedula,
+                telefono = c.telefono,
+                email = c.email
+            }).ToList();
+        }
+        public List<Cliente> GetFilterListTable(string filtro)
+        {
+            List<Cliente> lista = CDAlmacenCliente.AlmacenClientes;
+
+            return lista.Where(c => c.nombre.Contains(filtro, StringComparison.OrdinalIgnoreCase) ||
+                               c.apellido.Contains(filtro, StringComparison.OrdinalIgnoreCase) ||
+                               c.cedula.Contains(filtro, StringComparison.OrdinalIgnoreCase)
+            ).Select(c => new Cliente
+            {
+                nombre = $"{c.nombre} {c.apellido}",
+                cedula = c.cedula,
+                telefono = c.telefono,
+                email = c.email
+            }).ToList();
         }
 
     }

@@ -46,8 +46,8 @@ namespace CapaPresentacion
             label2 = new Label();
             txt_name = new TextBox();
             panel3 = new Panel();
-            btn_create = new CapaPresentacion.ComponentsUX.RoundedLabel();
-            btn_cancel = new CapaPresentacion.ComponentsUX.RoundedLabel();
+            btn_create = new ComponentsUX.RoundedLabel();
+            btn_cancel = new ComponentsUX.RoundedLabel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nud_yearsxp).BeginInit();
@@ -130,10 +130,11 @@ namespace CapaPresentacion
             txt_phone.ForeColor = Color.White;
             txt_phone.Location = new Point(337, 96);
             txt_phone.Margin = new Padding(10);
-            txt_phone.Multiline = true;
+            txt_phone.MaximumSize = new Size(252, 25);
+            txt_phone.MinimumSize = new Size(252, 25);
             txt_phone.Name = "txt_phone";
             txt_phone.PlaceholderText = "   Insert number phone";
-            txt_phone.Size = new Size(252, 23);
+            txt_phone.Size = new Size(252, 25);
             txt_phone.TabIndex = 11;
             // 
             // label7
@@ -157,10 +158,11 @@ namespace CapaPresentacion
             txt_lastname.ForeColor = Color.White;
             txt_lastname.Location = new Point(337, 39);
             txt_lastname.Margin = new Padding(10);
-            txt_lastname.Multiline = true;
+            txt_lastname.MaximumSize = new Size(252, 25);
+            txt_lastname.MinimumSize = new Size(252, 25);
             txt_lastname.Name = "txt_lastname";
             txt_lastname.PlaceholderText = "   Insert last name";
-            txt_lastname.Size = new Size(252, 23);
+            txt_lastname.Size = new Size(252, 25);
             txt_lastname.TabIndex = 9;
             // 
             // label4
@@ -196,10 +198,11 @@ namespace CapaPresentacion
             txt_espec.ForeColor = Color.White;
             txt_espec.Location = new Point(46, 153);
             txt_espec.Margin = new Padding(10);
-            txt_espec.Multiline = true;
+            txt_espec.MaximumSize = new Size(252, 25);
+            txt_espec.MinimumSize = new Size(252, 25);
             txt_espec.Name = "txt_espec";
             txt_espec.PlaceholderText = "   Insert especiality";
-            txt_espec.Size = new Size(252, 23);
+            txt_espec.Size = new Size(252, 25);
             txt_espec.TabIndex = 5;
             // 
             // label3
@@ -223,10 +226,11 @@ namespace CapaPresentacion
             txt_dni.ForeColor = Color.White;
             txt_dni.Location = new Point(46, 96);
             txt_dni.Margin = new Padding(10);
-            txt_dni.Multiline = true;
+            txt_dni.MaximumSize = new Size(252, 25);
+            txt_dni.MinimumSize = new Size(252, 25);
             txt_dni.Name = "txt_dni";
             txt_dni.PlaceholderText = "   Insert DNI";
-            txt_dni.Size = new Size(252, 23);
+            txt_dni.Size = new Size(252, 25);
             txt_dni.TabIndex = 3;
             // 
             // label2
@@ -250,10 +254,11 @@ namespace CapaPresentacion
             txt_name.ForeColor = Color.White;
             txt_name.Location = new Point(46, 39);
             txt_name.Margin = new Padding(10);
-            txt_name.Multiline = true;
+            txt_name.MaximumSize = new Size(252, 25);
+            txt_name.MinimumSize = new Size(252, 25);
             txt_name.Name = "txt_name";
             txt_name.PlaceholderText = "   Insert name";
-            txt_name.Size = new Size(252, 23);
+            txt_name.Size = new Size(252, 25);
             txt_name.TabIndex = 0;
             // 
             // panel3
@@ -305,7 +310,7 @@ namespace CapaPresentacion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Rectangle_26;
+            BackColor = Color.FromArgb(10, 16, 21);
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(640, 446);
             Controls.Add(panel2);

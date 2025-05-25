@@ -1,4 +1,6 @@
-﻿using CapaPresentacion.ComponentsUX;
+﻿using CapaEntidad;
+using CapaNegocio;
+using CapaPresentacion.ComponentsUX;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,15 +25,17 @@ namespace CapaPresentacion
                           ControlStyles.UserPaint |
                           ControlStyles.OptimizedDoubleBuffer, true);
             this.UpdateStyles();
+            customdatagridview1.AutoGenerateColumns = false;
             metodoPrueba();
         }
 
         private void metodoPrueba()
         {
-            customdatagridview1.Rows.Add(new object[] { null, 547536, "Carlos Olaya", DateTime.Now, "preventivo", 432, "Completado" });
-            customdatagridview1.Rows.Add(new object[] { null, 547536, "Carlos Olaya", DateTime.Now, "preventivo", 432, "Esperando" });
-            customdatagridview1.Rows.Add(new object[] { null, 547536, "Carlos Olaya", DateTime.Now, "preventivo", 432, "Cancelado" });
-            //customdatagridview1.Rows.Add(new object[] { null, 547536, "Carlos Olaya", DateTime.Now, "preventivo", 432, "Cancelado" });
+            CNServicio cNServicio = new CNServicio();
+
+            List<Servicio> lista = cNServicio.GetListTable();
+            customdatagridview1.DataSource = lista;
+
 
             Dictionary<string, int> Datos = new Dictionary<string, int>()
             {
@@ -91,7 +95,7 @@ namespace CapaPresentacion
                 if (e.ColumnIndex == 6 && e.CellStyle != null)
                 {
                     string caso = e.Value?.ToString() ?? string.Empty;
-
+                    Debug.WriteLine(caso);
 
                     switch (caso)
                     {

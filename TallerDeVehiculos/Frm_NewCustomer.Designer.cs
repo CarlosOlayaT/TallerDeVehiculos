@@ -33,6 +33,8 @@ namespace CapaPresentacion
             panel1 = new Panel();
             label1 = new Label();
             panel2 = new Panel();
+            label4 = new Label();
+            txt_location = new TextBox();
             label6 = new Label();
             txt_phone = new TextBox();
             label7 = new Label();
@@ -44,8 +46,8 @@ namespace CapaPresentacion
             label2 = new Label();
             txt_name = new TextBox();
             panel3 = new Panel();
-            btn_create = new CapaPresentacion.ComponentsUX.RoundedLabel();
-            btn_cancel = new CapaPresentacion.ComponentsUX.RoundedLabel();
+            btn_create = new ComponentsUX.RoundedLabel();
+            btn_cancel = new ComponentsUX.RoundedLabel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -76,6 +78,8 @@ namespace CapaPresentacion
             // panel2
             // 
             panel2.BackColor = Color.Transparent;
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(txt_location);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(txt_phone);
             panel2.Controls.Add(label7);
@@ -92,6 +96,34 @@ namespace CapaPresentacion
             panel2.Size = new Size(640, 251);
             panel2.TabIndex = 6;
             panel2.Paint += panel1_Paint;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Roboto", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(337, 129);
+            label4.Name = "label4";
+            label4.Size = new Size(65, 18);
+            label4.TabIndex = 14;
+            label4.Text = "Location";
+            label4.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txt_location
+            // 
+            txt_location.BackColor = Color.FromArgb(30, 39, 43);
+            txt_location.BorderStyle = BorderStyle.None;
+            txt_location.CharacterCasing = CharacterCasing.Lower;
+            txt_location.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txt_location.ForeColor = Color.White;
+            txt_location.Location = new Point(337, 153);
+            txt_location.Margin = new Padding(10);
+            txt_location.MaximumSize = new Size(252, 25);
+            txt_location.MinimumSize = new Size(252, 25);
+            txt_location.Name = "txt_location";
+            txt_location.PlaceholderText = "   Insert location";
+            txt_location.Size = new Size(252, 25);
+            txt_location.TabIndex = 13;
             // 
             // label6
             // 
@@ -114,10 +146,11 @@ namespace CapaPresentacion
             txt_phone.ForeColor = Color.White;
             txt_phone.Location = new Point(337, 96);
             txt_phone.Margin = new Padding(10);
-            txt_phone.Multiline = true;
+            txt_phone.MaximumSize = new Size(252, 25);
+            txt_phone.MinimumSize = new Size(252, 25);
             txt_phone.Name = "txt_phone";
             txt_phone.PlaceholderText = "   Insert number phone";
-            txt_phone.Size = new Size(252, 23);
+            txt_phone.Size = new Size(252, 25);
             txt_phone.TabIndex = 11;
             // 
             // label7
@@ -141,10 +174,11 @@ namespace CapaPresentacion
             txt_lastname.ForeColor = Color.White;
             txt_lastname.Location = new Point(337, 39);
             txt_lastname.Margin = new Padding(10);
-            txt_lastname.Multiline = true;
+            txt_lastname.MaximumSize = new Size(252, 25);
+            txt_lastname.MinimumSize = new Size(252, 25);
             txt_lastname.Name = "txt_lastname";
             txt_lastname.PlaceholderText = "   Insert last name";
-            txt_lastname.Size = new Size(252, 23);
+            txt_lastname.Size = new Size(252, 25);
             txt_lastname.TabIndex = 9;
             // 
             // label5
@@ -168,10 +202,11 @@ namespace CapaPresentacion
             txt_email.ForeColor = Color.White;
             txt_email.Location = new Point(46, 153);
             txt_email.Margin = new Padding(10);
-            txt_email.Multiline = true;
+            txt_email.MaximumSize = new Size(252, 25);
+            txt_email.MinimumSize = new Size(252, 25);
             txt_email.Name = "txt_email";
             txt_email.PlaceholderText = "   Insert especiality";
-            txt_email.Size = new Size(252, 23);
+            txt_email.Size = new Size(252, 25);
             txt_email.TabIndex = 5;
             // 
             // label3
@@ -195,10 +230,11 @@ namespace CapaPresentacion
             txt_dni.ForeColor = Color.White;
             txt_dni.Location = new Point(46, 96);
             txt_dni.Margin = new Padding(10);
-            txt_dni.Multiline = true;
+            txt_dni.MaximumSize = new Size(252, 25);
+            txt_dni.MinimumSize = new Size(252, 25);
             txt_dni.Name = "txt_dni";
             txt_dni.PlaceholderText = "   Insert DNI";
-            txt_dni.Size = new Size(252, 23);
+            txt_dni.Size = new Size(252, 25);
             txt_dni.TabIndex = 3;
             // 
             // label2
@@ -222,10 +258,11 @@ namespace CapaPresentacion
             txt_name.ForeColor = Color.White;
             txt_name.Location = new Point(46, 39);
             txt_name.Margin = new Padding(10);
-            txt_name.Multiline = true;
+            txt_name.MaximumSize = new Size(252, 25);
+            txt_name.MinimumSize = new Size(252, 25);
             txt_name.Name = "txt_name";
             txt_name.PlaceholderText = "   Insert name";
-            txt_name.Size = new Size(252, 23);
+            txt_name.Size = new Size(252, 25);
             txt_name.TabIndex = 0;
             // 
             // panel3
@@ -277,7 +314,7 @@ namespace CapaPresentacion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Rectangle_26;
+            BackColor = Color.FromArgb(10, 16, 21);
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(640, 382);
             Controls.Add(panel2);
@@ -312,5 +349,7 @@ namespace CapaPresentacion
         private Label label3;
         private TextBox txt_dni;
         private Label label2;
+        private Label label4;
+        private TextBox txt_location;
     }
 }

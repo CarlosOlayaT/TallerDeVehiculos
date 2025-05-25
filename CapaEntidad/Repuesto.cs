@@ -11,6 +11,7 @@ namespace CapaEntidad
         public string _Nombre { get; set; }
         public int _Cantidad { get; set; }
         public float _precio { get; set; }
+        public float subtotal {  get; set; }
 
 
     }

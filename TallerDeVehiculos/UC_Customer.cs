@@ -20,24 +20,12 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             this.DoubleBuffered = true;
-            //customdatagridview1.Rows.Add(new object[] { null, 547536, "Carlos Olaya", "preventivo", 432, });
-            //customdatagridview1.Rows.Add(new object[] { null, 547536, "Carlos Olaya", "preventivo", 432, });
-            //customdatagridview1.Rows.Add(new object[] { null, 547536, "Carlos Olaya", "preventivo", 432, });
-            List<Cliente> lista = CNCliente.GetClientes();
+            customdatagridview1.AutoGenerateColumns = false;
+            List<Cliente> lista = CNCliente.GetClientList();
             lbl_customers.Text = $"All Customer({lista.Count})";
-            LoadTable(lista);
+            customdatagridview1.DataSource = lista;
         }
 
-        private void LoadTable(List<Cliente> lista)
-        {
-            customdatagridview1.Rows.Clear();
-           
-
-            foreach (Cliente cliente in lista)
-            {
-                customdatagridview1.Rows.Add(new object[] { false, cliente.cedula, $"{cliente.nombre} {cliente.apellido}", cliente.email, cliente.telefono });
-            }
-        }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
@@ -65,25 +53,26 @@ namespace CapaPresentacion
 
             if (frm_NewCustomer.ShowDialog() == DialogResult.Cancel)
             {
-                List<Cliente> lista = CNCliente.GetClientes();
+                List<Cliente> lista = CNCliente.GetClientList();
                 lbl_customers.Text = $"All Customer({lista.Count})";
-                LoadTable(lista);
+                customdatagridview1.DataSource = lista;
             }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            List<Cliente> lista = CNCliente.GetClientes();
-            if (Regex.IsMatch(txt_search.Text, @"[\d+]"))
+
+            if (!string.IsNullOrEmpty(txt_search.Text.Trim()))
             {
-                List<Cliente> resultado = lista.Where(c => c.cedula.ToString().Contains(txt_search.Text)).ToList();
-                LoadTable(resultado);
+               List<Cliente> list = CNCliente.GetFilterListTable(txt_search.Text.Trim());
+               customdatagridview1.DataSource= list;
             }
             else
             {
-                List<Cliente> resultado = lista.Where(c => $"{c.nombre} {c.apellido}".ToString().Contains(txt_search.Text)).ToList();
-                LoadTable(resultado);
+                List<Cliente> clientes = CNCliente.GetClientList();
+                customdatagridview1.DataSource = clientes;
             }
+
         }
     }
 }

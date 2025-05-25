@@ -26,7 +26,7 @@ namespace CapaEntidad
 
         public override string ToString()
         {
-            return $"Mecanico| {base.ToString()} Especialidad: {Especialidad}, Años de experiencia: {AniosExperiencia}";
+            return $" {base.ToString()}";
         }
 
     }

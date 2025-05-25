@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-    public class Persona
+    public abstract class Persona
     {
         public string cedula { get; set; }
         public string apellido { get; set; }
@@ -28,7 +28,7 @@ namespace CapaEntidad
 
         public override string ToString()
         {
-            return $"[nombre={nombre}, apellido={apellido}, cedula={cedula}]";
+            return $"{nombre} {apellido}";
         }
 
     }

@@ -23,23 +23,12 @@ namespace CapaPresentacion
             this.DoubleBuffered = true;
             List<Mecanico> Lista = CNMecanico.GetMecanicoList();
             lbl_mechanics.Text = $"All mechanic({Lista.Count})";
-            LoadTable(Lista);
+            customdatagridview1.AutoGenerateColumns = false;
+
+            customdatagridview1.DataSource = Lista;
 
         }
         CNMecanico CNMecanico = new CNMecanico();
-        private void LoadTable(List<Mecanico> Lista)
-        {
-            customdatagridview1.Rows.Clear();
-
-
-            foreach (Mecanico mec in Lista)
-            {
-
-                customdatagridview1.Rows.Add(new object[] { false, mec.cedula, $"{mec.nombre} {mec.apellido}", mec.AniosExperiencia, mec.Especialidad, mec.telefono, mec.Estado ? "Disponible" : "No disponible" });
-
-            }
-
-        }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
@@ -69,7 +58,7 @@ namespace CapaPresentacion
             {
                 List<Mecanico> Lista = CNMecanico.GetMecanicoList();
                 lbl_mechanics.Text = $"All mechanic({Lista.Count})";
-                LoadTable(Lista);
+                customdatagridview1.DataSource = Lista;
             }
         }
 
@@ -82,18 +71,19 @@ namespace CapaPresentacion
             var cell = customdatagridview1.Rows[e.RowIndex].Cells[e.ColumnIndex] as AlignedPanelCell;
             if (cell != null)
             {
-                if (e.ColumnIndex == 6 && e.CellStyle != null)
+                if (e.ColumnIndex == 5 && e.CellStyle != null)
                 {
-                    string caso = e.Value?.ToString() ?? string.Empty;
+                    bool caso = Boolean.Parse(e.Value.ToString());
 
+                    Debug.WriteLine(caso);
 
                     switch (caso)
                     {
-                        case "Disponible":
+                        case true:
                             e.CellStyle.ForeColor = Color.FromArgb(32, 192, 98);
                             cell.PanelColor = Color.FromArgb(4, 53, 25);
                             break;
-                        case "No disponible":
+                        case false:
                             e.CellStyle.ForeColor = Color.FromArgb(216, 64, 64);
                             cell.PanelColor = Color.FromArgb(89, 4, 4);
                             break;
@@ -108,16 +98,26 @@ namespace CapaPresentacion
 
         private void txt_search_TextChanged(object sender, EventArgs e)
         {
-            List<Mecanico> lista = CNMecanico.GetMecanicoList();
-            if (Regex.IsMatch(txt_search.Text, @"[\d+]"))
+            if (!string.IsNullOrWhiteSpace(txt_search.Text))
             {
-                List<Mecanico> resultado = lista.Where(m => m.cedula.ToString().Contains(txt_search.Text)).ToList();
-                LoadTable(resultado);
+                List<Mecanico> list = CNMecanico.GetListTable(txt_search.Text.Trim());
+                customdatagridview1.DataSource = list;
             }
             else
             {
-                List<Mecanico> resultado = lista.Where(m => $"{m.nombre} {m.apellido}".ToString().Contains(txt_search.Text)).ToList();
-                LoadTable(resultado);
+                customdatagridview1.DataSource = CNMecanico.GetMecanicoList();
+            }
+        }
+
+        private void customdatagridview1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (customdatagridview1.Columns[e.ColumnIndex].Name == "Cl_Status")
+            {
+                if (e.Value is bool estado)
+                {
+                    e.Value = estado ? "Disponible" : "No disponible";
+                    e.FormattingApplied = true;
+                }
             }
         }
     }

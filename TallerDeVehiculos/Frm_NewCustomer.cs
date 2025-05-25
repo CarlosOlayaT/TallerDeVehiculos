@@ -116,6 +116,7 @@ namespace CapaPresentacion
             txt_dni.Text = string.Empty;
             txt_email.Text = string.Empty;
             txt_phone.Text = string.Empty;
+            txt_location.Text = string.Empty;
 
         }
     }

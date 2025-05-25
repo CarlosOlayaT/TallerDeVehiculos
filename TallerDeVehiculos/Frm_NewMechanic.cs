@@ -99,10 +99,7 @@ namespace CapaPresentacion
                     telefono = txt_phone.Text,
                     AniosExperiencia = Convert.ToInt32(nud_yearsxp.Value)
                 };
-
-
                 CNMecanico.AgregarMecanico(mecanico);
-
 
                 MessageBox.Show("Registro del mecanico exitoso!.", "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Clean();
@@ -111,12 +108,6 @@ namespace CapaPresentacion
             {
                 MessageBox.Show(ex.Message, "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            //1. forma
-            //mecanico.nombre= txt_name.Text;
-            //mecanico.apellido =txt_lastname.Text;
-            //2. forma
-
 
         }
         private void Clean()
@@ -129,6 +120,5 @@ namespace CapaPresentacion
             nud_yearsxp.Value = 0;
 
         }
-
     }
 }

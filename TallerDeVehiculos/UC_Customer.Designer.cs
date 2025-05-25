@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
             panel4 = new Panel();
-            roundedPanel1 = new CapaPresentacion.ComponentsUX.RoundedPanel();
+            roundedPanel1 = new ComponentsUX.RoundedPanel();
             label2 = new Label();
             label3 = new Label();
             label1 = new Label();
             panel5 = new Panel();
             lbl_customers = new Label();
-            roundedPanel3 = new CapaPresentacion.ComponentsUX.RoundedPanel();
+            roundedPanel3 = new ComponentsUX.RoundedPanel();
             pictureBox1 = new PictureBox();
             txt_search = new TextBox();
             panel6 = new Panel();
-            customdatagridview1 = new CapaPresentacion.ComponentsUX.Customdatagridview();
+            customdatagridview1 = new ComponentsUX.Customdatagridview();
             Check = new DataGridViewCheckBoxColumn();
             Cl_Cedula = new DataGridViewTextBoxColumn();
             Cl_Names = new DataGridViewTextBoxColumn();
@@ -52,8 +52,8 @@
             Cl_Telf = new DataGridViewTextBoxColumn();
             panel7 = new Panel();
             panel8 = new Panel();
-            roundedPanel2 = new CapaPresentacion.ComponentsUX.RoundedPanel();
-            roundedLabel1 = new CapaPresentacion.ComponentsUX.RoundedLabel();
+            roundedPanel2 = new ComponentsUX.RoundedPanel();
+            roundedLabel1 = new ComponentsUX.RoundedLabel();
             panel9 = new Panel();
             panel10 = new Panel();
             panel4.SuspendLayout();
@@ -253,25 +253,25 @@
             customdatagridview1.BorderStyle = BorderStyle.None;
             customdatagridview1.CellBorderStyle = DataGridViewCellBorderStyle.None;
             customdatagridview1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(30, 39, 43);
-            dataGridViewCellStyle5.Font = new Font("Roboto", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            customdatagridview1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(30, 39, 43);
+            dataGridViewCellStyle1.Font = new Font("Roboto", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            customdatagridview1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             customdatagridview1.ColumnHeadersHeight = 40;
             customdatagridview1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             customdatagridview1.Columns.AddRange(new DataGridViewColumn[] { Check, Cl_Cedula, Cl_Names, Cl_Email, Cl_Telf });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(10, 16, 21);
-            dataGridViewCellStyle6.Font = new Font("Roboto", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(10, 16, 21);
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            customdatagridview1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(10, 16, 21);
+            dataGridViewCellStyle2.Font = new Font("Roboto", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(10, 16, 21);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            customdatagridview1.DefaultCellStyle = dataGridViewCellStyle2;
             customdatagridview1.Dock = DockStyle.Fill;
             customdatagridview1.EnableHeadersVisualStyles = false;
             customdatagridview1.Location = new Point(1, 30);
@@ -294,24 +294,28 @@
             // 
             // Cl_Cedula
             // 
+            Cl_Cedula.DataPropertyName = "cedula";
             Cl_Cedula.HeaderText = "Cedula";
             Cl_Cedula.Name = "Cl_Cedula";
             Cl_Cedula.ReadOnly = true;
             // 
             // Cl_Names
             // 
+            Cl_Names.DataPropertyName = "nombre";
             Cl_Names.HeaderText = "Nombres y Apellidos";
             Cl_Names.Name = "Cl_Names";
             Cl_Names.ReadOnly = true;
             // 
             // Cl_Email
             // 
+            Cl_Email.DataPropertyName = "email";
             Cl_Email.HeaderText = "Email";
             Cl_Email.Name = "Cl_Email";
             Cl_Email.ReadOnly = true;
             // 
             // Cl_Telf
             // 
+            Cl_Telf.DataPropertyName = "telefono";
             Cl_Telf.HeaderText = "Telefono";
             Cl_Telf.Name = "Cl_Telf";
             Cl_Telf.ReadOnly = true;
