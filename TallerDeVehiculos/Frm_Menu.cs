@@ -28,8 +28,8 @@ namespace TallerDeVehiculos
                           ControlStyles.OptimizedDoubleBuffer, true);
             this.UpdateStyles();
 
-            int w = (int)(Screen.FromControl(this).WorkingArea.Width * 0.56);
-            int h = (int)(Screen.FromControl(this).WorkingArea.Height * 0.74);
+            int w = (int)(Screen.FromControl(this).WorkingArea.Width * 0.56 * 1.10); 
+            int h = (int)(Screen.FromControl(this).WorkingArea.Height * 0.74 * 1.10);
             //Debug.WriteLine($"{w},{h}");
             this.Size = new Size(w, h);
             //Pn_Menu.Size = new Size((int)(this.Size.Width * 0.22), this.Size.Height);

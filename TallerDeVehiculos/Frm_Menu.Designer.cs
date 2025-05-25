@@ -1,9 +1,11 @@
 ﻿using CapaPresentacion.ComponentsUX;
+using System.Drawing.Text;
 
 namespace TallerDeVehiculos
 {
     partial class Frm_Menu
     {
+        private PrivateFontCollection PrivateFontCollection = new PrivateFontCollection();
         /// <summary>
         ///  Required designer variable.
         /// </summary>
@@ -30,6 +32,7 @@ namespace TallerDeVehiculos
         /// </summary>
         private void InitializeComponent()
         {
+           
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Menu));
             userInfo1 = new CapaPresentacion.ComponentsUI.UserInfo();
             Pn_Menu = new Panel();
