@@ -45,18 +45,18 @@
             txt_search = new TextBox();
             panel6 = new Panel();
             customdatagridview1 = new ComponentsUX.Customdatagridview();
-            panel7 = new Panel();
-            panel8 = new Panel();
-            roundedPanel2 = new ComponentsUX.RoundedPanel();
-            roundedLabel1 = new ComponentsUX.RoundedLabel();
-            panel9 = new Panel();
-            panel10 = new Panel();
             Check = new DataGridViewCheckBoxColumn();
             Cl_Cedula = new DataGridViewTextBoxColumn();
             Cl_Names = new DataGridViewTextBoxColumn();
             Cl_Especialidad = new DataGridViewTextBoxColumn();
             Cl_Telf = new DataGridViewTextBoxColumn();
             Cl_Status = new ComponentsUX.AlignedPanelColumn();
+            panel7 = new Panel();
+            panel8 = new Panel();
+            roundedPanel2 = new ComponentsUX.RoundedPanel();
+            roundedLabel1 = new ComponentsUX.RoundedLabel();
+            panel9 = new Panel();
+            panel10 = new Panel();
             panel4.SuspendLayout();
             roundedPanel1.SuspendLayout();
             panel5.SuspendLayout();
@@ -109,14 +109,14 @@
             roundedPanel1.BackgroundImageLayout = ImageLayout.Stretch;
             roundedPanel1.Controls.Add(label2);
             roundedPanel1.Controls.Add(label3);
-            roundedPanel1.Location = new Point(592, 9);
+            roundedPanel1.Location = new Point(587, 9);
             roundedPanel1.Name = "roundedPanel1";
             roundedPanel1.Radius.All = 1;
             roundedPanel1.Radius.BottomLeft = 1;
             roundedPanel1.Radius.BottomRight = 1;
             roundedPanel1.Radius.TopLeft = 1;
             roundedPanel1.Radius.TopRight = 1;
-            roundedPanel1.Size = new Size(175, 49);
+            roundedPanel1.Size = new Size(180, 49);
             roundedPanel1.StateColor = Color.Transparent;
             roundedPanel1.TabIndex = 1;
             // 
@@ -128,7 +128,7 @@
             label2.ForeColor = Color.FromArgb(10, 16, 21);
             label2.Location = new Point(31, 0);
             label2.Name = "label2";
-            label2.Size = new Size(144, 49);
+            label2.Size = new Size(149, 49);
             label2.TabIndex = 0;
             label2.Text = "New Mechanic";
             label2.TextAlign = ContentAlignment.MiddleLeft;
@@ -289,6 +289,49 @@
             customdatagridview1.CellFormatting += customdatagridview1_CellFormatting;
             customdatagridview1.CellPainting += customdatagridview1_CellPainting;
             // 
+            // Check
+            // 
+            Check.FillWeight = 15F;
+            Check.HeaderText = "";
+            Check.Name = "Check";
+            // 
+            // Cl_Cedula
+            // 
+            Cl_Cedula.DataPropertyName = "cedula";
+            Cl_Cedula.HeaderText = "Cedula";
+            Cl_Cedula.Name = "Cl_Cedula";
+            Cl_Cedula.ReadOnly = true;
+            // 
+            // Cl_Names
+            // 
+            Cl_Names.DataPropertyName = "nombre";
+            Cl_Names.HeaderText = "Nombre y Apellido";
+            Cl_Names.Name = "Cl_Names";
+            Cl_Names.ReadOnly = true;
+            // 
+            // Cl_Especialidad
+            // 
+            Cl_Especialidad.DataPropertyName = "Especialidad";
+            Cl_Especialidad.HeaderText = "Especialidad";
+            Cl_Especialidad.Name = "Cl_Especialidad";
+            Cl_Especialidad.ReadOnly = true;
+            // 
+            // Cl_Telf
+            // 
+            Cl_Telf.DataPropertyName = "telefono";
+            Cl_Telf.HeaderText = "Telefono";
+            Cl_Telf.Name = "Cl_Telf";
+            Cl_Telf.ReadOnly = true;
+            // 
+            // Cl_Status
+            // 
+            Cl_Status.DataPropertyName = "Estado";
+            Cl_Status.HeaderText = "Estado";
+            Cl_Status.LabelColor = Color.Empty;
+            Cl_Status.Name = "Cl_Status";
+            Cl_Status.Radius = 9;
+            Cl_Status.ReadOnly = true;
+            // 
             // panel7
             // 
             panel7.Dock = DockStyle.Right;
@@ -351,49 +394,6 @@
             panel10.Name = "panel10";
             panel10.Size = new Size(773, 21);
             panel10.TabIndex = 7;
-            // 
-            // Check
-            // 
-            Check.FillWeight = 15F;
-            Check.HeaderText = "";
-            Check.Name = "Check";
-            // 
-            // Cl_Cedula
-            // 
-            Cl_Cedula.DataPropertyName = "cedula";
-            Cl_Cedula.HeaderText = "Cedula";
-            Cl_Cedula.Name = "Cl_Cedula";
-            Cl_Cedula.ReadOnly = true;
-            // 
-            // Cl_Names
-            // 
-            Cl_Names.DataPropertyName = "nombre";
-            Cl_Names.HeaderText = "Nombre y Apellido";
-            Cl_Names.Name = "Cl_Names";
-            Cl_Names.ReadOnly = true;
-            // 
-            // Cl_Especialidad
-            // 
-            Cl_Especialidad.DataPropertyName = "Especialidad";
-            Cl_Especialidad.HeaderText = "Especialidad";
-            Cl_Especialidad.Name = "Cl_Especialidad";
-            Cl_Especialidad.ReadOnly = true;
-            // 
-            // Cl_Telf
-            // 
-            Cl_Telf.DataPropertyName = "telefono";
-            Cl_Telf.HeaderText = "Telefono";
-            Cl_Telf.Name = "Cl_Telf";
-            Cl_Telf.ReadOnly = true;
-            // 
-            // Cl_Status
-            // 
-            Cl_Status.DataPropertyName = "Estado";
-            Cl_Status.HeaderText = "Estado";
-            Cl_Status.LabelColor = Color.Empty;
-            Cl_Status.Name = "Cl_Status";
-            Cl_Status.Radius = 9;
-            Cl_Status.ReadOnly = true;
             // 
             // UC_Mechanic
             // 

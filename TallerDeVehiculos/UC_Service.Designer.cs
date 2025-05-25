@@ -52,12 +52,6 @@
             label4 = new Label();
             panel6 = new Panel();
             customdatagridview1 = new ComponentsUX.Customdatagridview();
-            panel7 = new Panel();
-            panel8 = new Panel();
-            roundedPanel2 = new ComponentsUX.RoundedPanel();
-            roundedLabel1 = new ComponentsUX.RoundedLabel();
-            panel9 = new Panel();
-            panel10 = new Panel();
             Cl_Codigo = new DataGridViewTextBoxColumn();
             Cl_cliente = new DataGridViewTextBoxColumn();
             Cl_mech = new DataGridViewTextBoxColumn();
@@ -65,6 +59,12 @@
             Cl_placa = new DataGridViewTextBoxColumn();
             Cl_total = new DataGridViewTextBoxColumn();
             Cl_Edit = new DataGridViewImageColumn();
+            panel7 = new Panel();
+            panel8 = new Panel();
+            roundedPanel2 = new ComponentsUX.RoundedPanel();
+            roundedLabel1 = new ComponentsUX.RoundedLabel();
+            panel9 = new Panel();
+            panel10 = new Panel();
             panel4.SuspendLayout();
             roundedPanel1.SuspendLayout();
             panel5.SuspendLayout();
@@ -118,14 +118,14 @@
             roundedPanel1.BackgroundImageLayout = ImageLayout.Stretch;
             roundedPanel1.Controls.Add(label2);
             roundedPanel1.Controls.Add(label3);
-            roundedPanel1.Location = new Point(538, 9);
+            roundedPanel1.Location = new Point(527, 9);
             roundedPanel1.Name = "roundedPanel1";
             roundedPanel1.Radius.All = 1;
             roundedPanel1.Radius.BottomLeft = 1;
             roundedPanel1.Radius.BottomRight = 1;
             roundedPanel1.Radius.TopLeft = 1;
             roundedPanel1.Radius.TopRight = 1;
-            roundedPanel1.Size = new Size(232, 49);
+            roundedPanel1.Size = new Size(243, 49);
             roundedPanel1.StateColor = Color.Transparent;
             roundedPanel1.TabIndex = 1;
             // 
@@ -137,7 +137,7 @@
             label2.ForeColor = Color.FromArgb(10, 16, 21);
             label2.Location = new Point(35, 0);
             label2.Name = "label2";
-            label2.Size = new Size(197, 49);
+            label2.Size = new Size(208, 49);
             label2.TabIndex = 0;
             label2.Text = "New Mantenimiento";
             label2.TextAlign = ContentAlignment.MiddleLeft;
@@ -366,6 +366,61 @@
             customdatagridview1.CellContentClick += customdatagridview1_CellContentClick;
             customdatagridview1.CellPainting += customdatagridview1_CellPainting;
             // 
+            // Cl_Codigo
+            // 
+            Cl_Codigo.DataPropertyName = "codigo";
+            Cl_Codigo.HeaderText = "Codigo";
+            Cl_Codigo.Name = "Cl_Codigo";
+            // 
+            // Cl_cliente
+            // 
+            Cl_cliente.DataPropertyName = "cliente";
+            Cl_cliente.HeaderText = "Cliente";
+            Cl_cliente.Name = "Cl_cliente";
+            Cl_cliente.ReadOnly = true;
+            // 
+            // Cl_mech
+            // 
+            Cl_mech.DataPropertyName = "mecanico";
+            Cl_mech.HeaderText = "Mecanico";
+            Cl_mech.Name = "Cl_mech";
+            Cl_mech.ReadOnly = true;
+            // 
+            // Cl_date
+            // 
+            Cl_date.DataPropertyName = "Fecha";
+            Cl_date.HeaderText = "Fecha";
+            Cl_date.Name = "Cl_date";
+            Cl_date.ReadOnly = true;
+            // 
+            // Cl_placa
+            // 
+            Cl_placa.DataPropertyName = "vehiculo";
+            Cl_placa.HeaderText = "Placa";
+            Cl_placa.Name = "Cl_placa";
+            Cl_placa.ReadOnly = true;
+            Cl_placa.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Cl_total
+            // 
+            Cl_total.DataPropertyName = "total";
+            Cl_total.HeaderText = "Total";
+            Cl_total.Name = "Cl_total";
+            Cl_total.ReadOnly = true;
+            // 
+            // Cl_Edit
+            // 
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(10, 16, 21);
+            dataGridViewCellStyle2.NullValue = resources.GetObject("dataGridViewCellStyle2.NullValue");
+            Cl_Edit.DefaultCellStyle = dataGridViewCellStyle2;
+            Cl_Edit.FillWeight = 25F;
+            Cl_Edit.HeaderText = "";
+            Cl_Edit.Image = Properties.Resources.Rectangle_5;
+            Cl_Edit.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            Cl_Edit.Name = "Cl_Edit";
+            Cl_Edit.Resizable = DataGridViewTriState.False;
+            // 
             // panel7
             // 
             panel7.Dock = DockStyle.Right;
@@ -428,61 +483,6 @@
             panel10.Name = "panel10";
             panel10.Size = new Size(773, 21);
             panel10.TabIndex = 7;
-            // 
-            // Cl_Codigo
-            // 
-            Cl_Codigo.DataPropertyName = "codigo";
-            Cl_Codigo.HeaderText = "Codigo";
-            Cl_Codigo.Name = "Cl_Codigo";
-            // 
-            // Cl_cliente
-            // 
-            Cl_cliente.DataPropertyName = "cliente";
-            Cl_cliente.HeaderText = "Cliente";
-            Cl_cliente.Name = "Cl_cliente";
-            Cl_cliente.ReadOnly = true;
-            // 
-            // Cl_mech
-            // 
-            Cl_mech.DataPropertyName = "mecanico";
-            Cl_mech.HeaderText = "Mecanico";
-            Cl_mech.Name = "Cl_mech";
-            Cl_mech.ReadOnly = true;
-            // 
-            // Cl_date
-            // 
-            Cl_date.DataPropertyName = "Fecha";
-            Cl_date.HeaderText = "Fecha";
-            Cl_date.Name = "Cl_date";
-            Cl_date.ReadOnly = true;
-            // 
-            // Cl_placa
-            // 
-            Cl_placa.DataPropertyName = "vehiculo";
-            Cl_placa.HeaderText = "Placa";
-            Cl_placa.Name = "Cl_placa";
-            Cl_placa.ReadOnly = true;
-            Cl_placa.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Cl_total
-            // 
-            Cl_total.DataPropertyName = "total";
-            Cl_total.HeaderText = "Total";
-            Cl_total.Name = "Cl_total";
-            Cl_total.ReadOnly = true;
-            // 
-            // Cl_Edit
-            // 
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(10, 16, 21);
-            dataGridViewCellStyle2.NullValue = resources.GetObject("dataGridViewCellStyle2.NullValue");
-            Cl_Edit.DefaultCellStyle = dataGridViewCellStyle2;
-            Cl_Edit.FillWeight = 25F;
-            Cl_Edit.HeaderText = "";
-            Cl_Edit.Image = Properties.Resources.Rectangle_5;
-            Cl_Edit.ImageLayout = DataGridViewImageCellLayout.Stretch;
-            Cl_Edit.Name = "Cl_Edit";
-            Cl_Edit.Resizable = DataGridViewTriState.False;
             // 
             // UC_Service
             // 

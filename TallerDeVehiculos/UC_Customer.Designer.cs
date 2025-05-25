@@ -108,14 +108,14 @@
             roundedPanel1.BackgroundImageLayout = ImageLayout.Stretch;
             roundedPanel1.Controls.Add(label2);
             roundedPanel1.Controls.Add(label3);
-            roundedPanel1.Location = new Point(592, 9);
+            roundedPanel1.Location = new Point(587, 9);
             roundedPanel1.Name = "roundedPanel1";
             roundedPanel1.Radius.All = 1;
             roundedPanel1.Radius.BottomLeft = 1;
             roundedPanel1.Radius.BottomRight = 1;
             roundedPanel1.Radius.TopLeft = 1;
             roundedPanel1.Radius.TopRight = 1;
-            roundedPanel1.Size = new Size(175, 49);
+            roundedPanel1.Size = new Size(180, 49);
             roundedPanel1.StateColor = Color.Transparent;
             roundedPanel1.TabIndex = 1;
             // 
@@ -127,7 +127,7 @@
             label2.ForeColor = Color.FromArgb(10, 16, 21);
             label2.Location = new Point(31, 0);
             label2.Name = "label2";
-            label2.Size = new Size(144, 49);
+            label2.Size = new Size(149, 49);
             label2.TabIndex = 0;
             label2.Text = "New Customer";
             label2.TextAlign = ContentAlignment.MiddleLeft;
