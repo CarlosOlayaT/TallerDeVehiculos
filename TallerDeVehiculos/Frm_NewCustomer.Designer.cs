@@ -152,6 +152,7 @@ namespace CapaPresentacion
             txt_phone.PlaceholderText = "   Insert number phone";
             txt_phone.Size = new Size(252, 25);
             txt_phone.TabIndex = 11;
+            txt_phone.KeyPress += txt_dni_KeyPress;
             // 
             // label7
             // 
@@ -169,7 +170,6 @@ namespace CapaPresentacion
             // 
             txt_lastname.BackColor = Color.FromArgb(30, 39, 43);
             txt_lastname.BorderStyle = BorderStyle.None;
-            txt_lastname.CharacterCasing = CharacterCasing.Lower;
             txt_lastname.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txt_lastname.ForeColor = Color.White;
             txt_lastname.Location = new Point(337, 39);
@@ -236,6 +236,7 @@ namespace CapaPresentacion
             txt_dni.PlaceholderText = "   Insert DNI";
             txt_dni.Size = new Size(252, 25);
             txt_dni.TabIndex = 3;
+            txt_dni.KeyPress += txt_dni_KeyPress;
             // 
             // label2
             // 
@@ -253,7 +254,6 @@ namespace CapaPresentacion
             // 
             txt_name.BackColor = Color.FromArgb(30, 39, 43);
             txt_name.BorderStyle = BorderStyle.None;
-            txt_name.CharacterCasing = CharacterCasing.Lower;
             txt_name.Font = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txt_name.ForeColor = Color.White;
             txt_name.Location = new Point(46, 39);

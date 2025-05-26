@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -203,6 +204,9 @@ namespace CapaPresentacion
 
                 Servicio servicio = new Servicio()
                 {
+
+
+
                     cliente = cliente,
                     mecanico = mecanico,
                     vehiculo = vehiculo,
@@ -285,6 +289,34 @@ namespace CapaPresentacion
                 return;
 
             e.Handled = true;
+        }
+
+
+
+        private void txt_placa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            int length = txt_placa.Text.Length;
+
+            if (char.IsControl(e.KeyChar))
+                return;
+
+            if (length < 3)
+            {
+                if (!char.IsLetter(e.KeyChar))
+                    e.Handled = true;
+                else
+                    e.KeyChar = char.ToUpper(e.KeyChar);
+            }
+            else if (length >= 3 && length < 7)
+            {
+                if (!char.IsDigit(e.KeyChar))
+                    e.Handled = true;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

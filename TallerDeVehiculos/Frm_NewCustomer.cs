@@ -119,5 +119,17 @@ namespace CapaPresentacion
             txt_location.Text = string.Empty;
 
         }
+
+        private void txt_dni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+
+                return;
+
+            if (e.KeyChar == (char)Keys.Back)
+                return;
+
+            e.Handled = true;
+        }
     }
 }

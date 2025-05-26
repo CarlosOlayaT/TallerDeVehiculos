@@ -41,8 +41,7 @@ namespace CapaPresentacion
             lbl_revisados.Text = cNMecanico.GetAlls().Count.ToString();
             lbl_pend.Text = lista.Count.ToString();
 
-            Dictionary<string, int> conteo = lista.GroupBy(l => l.estado).ToDictionary(g =>g.Key, g => g.Count());
-
+            
 
 
             List<Color> paleta = new List<Color>()
@@ -59,6 +58,17 @@ namespace CapaPresentacion
 
             };
             int i = 0;
+            string[] categorias = { "Completado", "Esperando", "Cancelado" };
+            var conteoBase = lista
+                .GroupBy(l => l.estado)
+                .ToDictionary(g => g.Key, g => g.Count());
+
+            // Asegurar que todos los estados estén presentes, incluso si no aparecen en los datos
+            Dictionary<string, int> conteo = categorias.ToDictionary(
+                key => key,
+                key => conteoBase.ContainsKey(key) ? conteoBase[key] : 0
+            );
+
             Label[] estado = new Label[] { lbl_aceptados, lbl_devueltos, lbl_pendientes };
             Label[] estadonum = new Label[] { lbl_acept_num, lbl_devu_num, lbl_pend_num };
             var labels = estado.Zip(estadonum, (lblEstado, lblNum) => (lblEstado, lblNum)).ToArray();
@@ -98,7 +108,7 @@ namespace CapaPresentacion
                 if (e.ColumnIndex == 6 && e.CellStyle != null)
                 {
                     string caso = e.Value?.ToString() ?? string.Empty;
-                    Debug.WriteLine(caso);
+                    //Debug.WriteLine(caso);
 
                     switch (caso)
                     {

@@ -14,7 +14,7 @@ namespace CapaNegocio
 
         public void AgregarCliente(Cliente cliente)
         {
-            //Nombres
+           
             if (string.IsNullOrEmpty(cliente.nombre))
             {
                 throw new ArgumentException("El nombre esta vacio");

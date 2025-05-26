@@ -120,5 +120,17 @@ namespace CapaPresentacion
             nud_yearsxp.Value = 0;
 
         }
+
+        private void txt_dni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+            
+                return;
+            
+            if (e.KeyChar == (char)Keys.Back)
+                return;
+
+            e.Handled = true;
+        }
     }
 }

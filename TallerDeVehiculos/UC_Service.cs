@@ -31,7 +31,7 @@ namespace CapaPresentacion
             List<Servicio> Lista = CNServicio.GetListTable();
             customdatagridview1.AutoGenerateColumns = false;
             customdatagridview1.DataSource = Lista;
-
+            //prueba();
         }
 
         private void prueba()
@@ -115,6 +115,76 @@ namespace CapaPresentacion
                 }
             });
 
+            CNServicio.AgregarServicio(new Servicio
+            {
+                tipo = "correctivo",
+                cliente = new Cliente
+                {
+                    apellido = "Suárez",
+                    cedula = "0945678912",
+                    direccion = "Calle Los Almendros, Manta",
+                    email = "suarez.ricardo@example.com",
+                    nombre = "Ricardo",
+                    telefono = "0965432187"
+                },
+                codigo = "M003",
+                diagnostico = "Reemplazo de batería y revisión eléctrica.",
+                estado = "Cancelado",
+                mecanico = new Mecanico
+                {
+                    apellido = "Torres",
+                    cedula = "0911223344",
+                    nombre = "Elena",
+                    telefono = "0956781234",
+                    AniosExperiencia = 3,
+                    Especialidad = "Electricidad automotriz",
+                    Estado = true
+                },
+                repuestos = new List<Repuesto>(),
+                total = 95,
+                vehiculo = new Vehiculo
+                {
+                    anio = 2020,
+                    marca = "Hyundai",
+                    modelo = "Tucson",
+                    placa = "DEF-3456"
+                }
+            });
+            CNServicio.AgregarServicio(new Servicio
+            {
+                tipo = "correctivo",
+                cliente = new Cliente
+                {
+                    apellido = "Suárez",
+                    cedula = "0945678912",
+                    direccion = "Calle Los Almendros, Manta",
+                    email = "suarez.ricardo@example.com",
+                    nombre = "Ricardo",
+                    telefono = "0965432187"
+                },
+                codigo = "M003",
+                diagnostico = "Reemplazo de batería y revisión eléctrica.",
+                estado = "Cancelado",
+                mecanico = new Mecanico
+                {
+                    apellido = "Torres",
+                    cedula = "0911223344",
+                    nombre = "Elena",
+                    telefono = "0956781234",
+                    AniosExperiencia = 3,
+                    Especialidad = "Electricidad automotriz",
+                    Estado = true
+                },
+                repuestos = new List<Repuesto>(),
+                total = 95,
+                vehiculo = new Vehiculo
+                {
+                    anio = 2020,
+                    marca = "Hyundai",
+                    modelo = "Tucson",
+                    placa = "DEF-3456"
+                }
+            });
             CNServicio.AgregarServicio(new Servicio
             {
                 tipo = "correctivo",

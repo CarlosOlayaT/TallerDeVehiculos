@@ -22,6 +22,7 @@ namespace TallerDeVehiculos
         public Frm_Menu()
         {
             InitializeComponent();
+            
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.AllPaintingInWmPaint |
                           ControlStyles.UserPaint |
@@ -33,6 +34,8 @@ namespace TallerDeVehiculos
             //Debug.WriteLine($"{w},{h}");
             this.Size = new Size(w, h);
             //Pn_Menu.Size = new Size((int)(this.Size.Width * 0.22), this.Size.Height);
+            flowLayoutPanel1.HorizontalScroll.Visible = false;
+            
         }
 
 
@@ -60,8 +63,8 @@ namespace TallerDeVehiculos
         private void Pb_Restaurar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
-            int w = (int)(Screen.FromControl(this).WorkingArea.Width * 0.56);
-            int h = (int)(Screen.FromControl(this).WorkingArea.Height * 0.74);
+            int w = (int)(Screen.FromControl(this).WorkingArea.Width * 0.56 * 1.10);
+            int h = (int)(Screen.FromControl(this).WorkingArea.Height * 0.74 * 1.10);
             this.Size = new Size(w, h); // o el tamaño que tenías antes
             this.CenterToScreen(); // opcional, para centrarlo
 

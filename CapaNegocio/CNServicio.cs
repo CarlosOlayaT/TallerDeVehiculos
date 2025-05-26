@@ -84,7 +84,6 @@ namespace CapaNegocio
 
             return servicios.Where(p =>
                 (p.cliente.nombre.Contains(filtro, StringComparison.OrdinalIgnoreCase)) ||
-                (p.cliente.apellido.Contains(filtro, StringComparison.OrdinalIgnoreCase)) ||
                 (esFecha && p.Fecha.Date == fechaFiltro.Date)
             )
             .Select(p => new Servicio

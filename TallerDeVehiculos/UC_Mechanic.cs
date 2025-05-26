@@ -75,7 +75,7 @@ namespace CapaPresentacion
                 {
                     bool caso = Boolean.Parse(e.Value.ToString());
 
-                    Debug.WriteLine(caso);
+                    //Debug.WriteLine(caso);
 
                     switch (caso)
                     {

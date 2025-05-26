@@ -32,7 +32,6 @@ namespace TallerDeVehiculos
         /// </summary>
         private void InitializeComponent()
         {
-           
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Menu));
             userInfo1 = new CapaPresentacion.ComponentsUI.UserInfo();
             Pn_Menu = new Panel();
@@ -107,13 +106,13 @@ namespace TallerDeVehiculos
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Controls.Add(panel1);
             flowLayoutPanel1.Controls.Add(alignedPanel4);
             flowLayoutPanel1.Controls.Add(alignedPanel3);
             flowLayoutPanel1.Controls.Add(alignedPanel5);
             flowLayoutPanel1.Controls.Add(alignedPanel6);
             flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(0, 211);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(237, 451);
@@ -121,13 +120,15 @@ namespace TallerDeVehiculos
             // 
             // panel1
             // 
+            panel1.AutoScroll = true;
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(234, 24);
+            panel1.Size = new Size(231, 24);
             panel1.TabIndex = 4;
             // 
             // alignedPanel4
             // 
+            alignedPanel4.AutoScroll = true;
             alignedPanel4.BackColor = Color.Transparent;
             alignedPanel4.BackgroundColor = Color.Transparent;
             alignedPanel4.ContentAlignment = ContentAlignment.MiddleCenter;
@@ -135,7 +136,7 @@ namespace TallerDeVehiculos
             alignedPanel4.Location = new Point(3, 33);
             alignedPanel4.Name = "alignedPanel4";
             alignedPanel4.Radius = 1;
-            alignedPanel4.Size = new Size(234, 77);
+            alignedPanel4.Size = new Size(231, 77);
             alignedPanel4.TabIndex = 1;
             // 
             // IcBtn_Dashboard
@@ -146,15 +147,16 @@ namespace TallerDeVehiculos
             IcBtn_Dashboard.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             IcBtn_Dashboard.ForeColor = Color.FromArgb(214, 251, 210);
             IcBtn_Dashboard.ImageIcon = (Image)resources.GetObject("IcBtn_Dashboard.ImageIcon");
-            IcBtn_Dashboard.Location = new Point(18, 12);
+            IcBtn_Dashboard.Location = new Point(16, 14);
             IcBtn_Dashboard.Name = "IcBtn_Dashboard";
-            IcBtn_Dashboard.Size = new Size(198, 52);
+            IcBtn_Dashboard.Size = new Size(198, 48);
             IcBtn_Dashboard.TabIndex = 0;
             IcBtn_Dashboard.TextoIngresado = "DashBoard";
             IcBtn_Dashboard.UseClicked += iconsModernButtons1_UseClicked;
             // 
             // alignedPanel3
             // 
+            alignedPanel3.AutoScroll = true;
             alignedPanel3.BackColor = Color.Transparent;
             alignedPanel3.BackgroundColor = Color.Transparent;
             alignedPanel3.ContentAlignment = ContentAlignment.MiddleCenter;
@@ -162,7 +164,7 @@ namespace TallerDeVehiculos
             alignedPanel3.Location = new Point(3, 116);
             alignedPanel3.Name = "alignedPanel3";
             alignedPanel3.Radius = 1;
-            alignedPanel3.Size = new Size(234, 77);
+            alignedPanel3.Size = new Size(231, 77);
             alignedPanel3.TabIndex = 0;
             // 
             // IcBtn_mechanic
@@ -173,7 +175,7 @@ namespace TallerDeVehiculos
             IcBtn_mechanic.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             IcBtn_mechanic.ForeColor = Color.FromArgb(214, 251, 210);
             IcBtn_mechanic.ImageIcon = (Image)resources.GetObject("IcBtn_mechanic.ImageIcon");
-            IcBtn_mechanic.Location = new Point(18, 12);
+            IcBtn_mechanic.Location = new Point(16, 12);
             IcBtn_mechanic.Name = "IcBtn_mechanic";
             IcBtn_mechanic.Size = new Size(198, 52);
             IcBtn_mechanic.TabIndex = 1;
@@ -182,6 +184,7 @@ namespace TallerDeVehiculos
             // 
             // alignedPanel5
             // 
+            alignedPanel5.AutoScroll = true;
             alignedPanel5.BackColor = Color.Transparent;
             alignedPanel5.BackgroundColor = Color.Transparent;
             alignedPanel5.ContentAlignment = ContentAlignment.MiddleCenter;
@@ -189,7 +192,7 @@ namespace TallerDeVehiculos
             alignedPanel5.Location = new Point(3, 199);
             alignedPanel5.Name = "alignedPanel5";
             alignedPanel5.Radius = 1;
-            alignedPanel5.Size = new Size(234, 77);
+            alignedPanel5.Size = new Size(231, 77);
             alignedPanel5.TabIndex = 2;
             // 
             // IcBtn_customer
@@ -200,7 +203,7 @@ namespace TallerDeVehiculos
             IcBtn_customer.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             IcBtn_customer.ForeColor = Color.FromArgb(214, 251, 210);
             IcBtn_customer.ImageIcon = (Image)resources.GetObject("IcBtn_customer.ImageIcon");
-            IcBtn_customer.Location = new Point(18, 12);
+            IcBtn_customer.Location = new Point(16, 12);
             IcBtn_customer.Name = "IcBtn_customer";
             IcBtn_customer.Size = new Size(198, 52);
             IcBtn_customer.TabIndex = 1;
@@ -209,6 +212,7 @@ namespace TallerDeVehiculos
             // 
             // alignedPanel6
             // 
+            alignedPanel6.AutoScroll = true;
             alignedPanel6.BackColor = Color.Transparent;
             alignedPanel6.BackgroundColor = Color.Transparent;
             alignedPanel6.ContentAlignment = ContentAlignment.MiddleCenter;
@@ -216,7 +220,7 @@ namespace TallerDeVehiculos
             alignedPanel6.Location = new Point(3, 282);
             alignedPanel6.Name = "alignedPanel6";
             alignedPanel6.Radius = 1;
-            alignedPanel6.Size = new Size(234, 77);
+            alignedPanel6.Size = new Size(231, 77);
             alignedPanel6.TabIndex = 3;
             // 
             // IcBtn_wrench
@@ -227,7 +231,7 @@ namespace TallerDeVehiculos
             IcBtn_wrench.Font = new Font("Roboto", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             IcBtn_wrench.ForeColor = Color.FromArgb(214, 251, 210);
             IcBtn_wrench.ImageIcon = (Image)resources.GetObject("IcBtn_wrench.ImageIcon");
-            IcBtn_wrench.Location = new Point(18, 12);
+            IcBtn_wrench.Location = new Point(16, 12);
             IcBtn_wrench.Name = "IcBtn_wrench";
             IcBtn_wrench.Size = new Size(198, 52);
             IcBtn_wrench.TabIndex = 1;

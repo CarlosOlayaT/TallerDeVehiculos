@@ -527,6 +527,7 @@
             txt_placa.Name = "txt_placa";
             txt_placa.Size = new Size(125, 15);
             txt_placa.TabIndex = 2;
+            txt_placa.KeyPress += txt_placa_KeyPress;
             // 
             // label6
             // 
