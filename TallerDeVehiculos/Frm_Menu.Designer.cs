@@ -36,7 +36,6 @@ namespace TallerDeVehiculos
             userInfo1 = new CapaPresentacion.ComponentsUI.UserInfo();
             Pn_Menu = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            panel1 = new Panel();
             alignedPanel4 = new AlignedPanel();
             IcBtn_Dashboard = new CapaPresentacion.ComponentsUI.IconsModernButtons();
             alignedPanel3 = new AlignedPanel();
@@ -107,33 +106,25 @@ namespace TallerDeVehiculos
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Controls.Add(panel1);
             flowLayoutPanel1.Controls.Add(alignedPanel4);
             flowLayoutPanel1.Controls.Add(alignedPanel3);
             flowLayoutPanel1.Controls.Add(alignedPanel5);
             flowLayoutPanel1.Controls.Add(alignedPanel6);
             flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Location = new Point(0, 211);
+            flowLayoutPanel1.Location = new Point(0, 244);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(237, 451);
+            flowLayoutPanel1.Size = new Size(237, 418);
             flowLayoutPanel1.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            panel1.AutoScroll = true;
-            panel1.Location = new Point(3, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(231, 24);
-            panel1.TabIndex = 4;
             // 
             // alignedPanel4
             // 
-            alignedPanel4.AutoScroll = true;
             alignedPanel4.BackColor = Color.Transparent;
             alignedPanel4.BackgroundColor = Color.Transparent;
             alignedPanel4.ContentAlignment = ContentAlignment.MiddleCenter;
             alignedPanel4.Controls.Add(IcBtn_Dashboard);
-            alignedPanel4.Location = new Point(3, 33);
+            alignedPanel4.Font = new Font("Segoe UI", 14F);
+            alignedPanel4.Location = new Point(3, 3);
+            alignedPanel4.MinimumSize = new Size(231, 77);
             alignedPanel4.Name = "alignedPanel4";
             alignedPanel4.Radius = 1;
             alignedPanel4.Size = new Size(231, 77);
@@ -156,12 +147,13 @@ namespace TallerDeVehiculos
             // 
             // alignedPanel3
             // 
-            alignedPanel3.AutoScroll = true;
             alignedPanel3.BackColor = Color.Transparent;
             alignedPanel3.BackgroundColor = Color.Transparent;
             alignedPanel3.ContentAlignment = ContentAlignment.MiddleCenter;
             alignedPanel3.Controls.Add(IcBtn_mechanic);
-            alignedPanel3.Location = new Point(3, 116);
+            alignedPanel3.Font = new Font("Segoe UI", 14F);
+            alignedPanel3.Location = new Point(3, 86);
+            alignedPanel3.MinimumSize = new Size(231, 77);
             alignedPanel3.Name = "alignedPanel3";
             alignedPanel3.Radius = 1;
             alignedPanel3.Size = new Size(231, 77);
@@ -184,12 +176,13 @@ namespace TallerDeVehiculos
             // 
             // alignedPanel5
             // 
-            alignedPanel5.AutoScroll = true;
             alignedPanel5.BackColor = Color.Transparent;
             alignedPanel5.BackgroundColor = Color.Transparent;
             alignedPanel5.ContentAlignment = ContentAlignment.MiddleCenter;
             alignedPanel5.Controls.Add(IcBtn_customer);
-            alignedPanel5.Location = new Point(3, 199);
+            alignedPanel5.Font = new Font("Segoe UI", 14F);
+            alignedPanel5.Location = new Point(3, 169);
+            alignedPanel5.MinimumSize = new Size(231, 77);
             alignedPanel5.Name = "alignedPanel5";
             alignedPanel5.Radius = 1;
             alignedPanel5.Size = new Size(231, 77);
@@ -212,12 +205,13 @@ namespace TallerDeVehiculos
             // 
             // alignedPanel6
             // 
-            alignedPanel6.AutoScroll = true;
             alignedPanel6.BackColor = Color.Transparent;
             alignedPanel6.BackgroundColor = Color.Transparent;
             alignedPanel6.ContentAlignment = ContentAlignment.MiddleCenter;
             alignedPanel6.Controls.Add(IcBtn_wrench);
-            alignedPanel6.Location = new Point(3, 282);
+            alignedPanel6.Font = new Font("Segoe UI", 14F);
+            alignedPanel6.Location = new Point(3, 252);
+            alignedPanel6.MinimumSize = new Size(231, 77);
             alignedPanel6.Name = "alignedPanel6";
             alignedPanel6.Radius = 1;
             alignedPanel6.Size = new Size(231, 77);
@@ -242,19 +236,19 @@ namespace TallerDeVehiculos
             // 
             alignedPanel2.BackColor = Color.Transparent;
             alignedPanel2.BackgroundColor = Color.Transparent;
-            alignedPanel2.ContentAlignment = ContentAlignment.BottomCenter;
+            alignedPanel2.ContentAlignment = ContentAlignment.MiddleCenter;
             alignedPanel2.Controls.Add(pictureBox1);
             alignedPanel2.Dock = DockStyle.Top;
             alignedPanel2.Location = new Point(0, 0);
             alignedPanel2.Name = "alignedPanel2";
             alignedPanel2.Radius = 1;
-            alignedPanel2.Size = new Size(237, 211);
+            alignedPanel2.Size = new Size(237, 244);
             alignedPanel2.TabIndex = 2;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(48, 71);
+            pictureBox1.Location = new Point(48, 52);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(140, 140);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -404,7 +398,6 @@ namespace TallerDeVehiculos
         private CapaPresentacion.ComponentsUI.IconsModernButtons IcBtn_customer;
         private AlignedPanel alignedPanel6;
         private CapaPresentacion.ComponentsUI.IconsModernButtons IcBtn_wrench;
-        private Panel panel1;
         private Panel Apn_Title;
         private PictureBox Pb_maximizar;
         private PictureBox Pb_Restaurar;
