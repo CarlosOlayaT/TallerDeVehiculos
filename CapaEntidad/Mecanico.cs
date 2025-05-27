@@ -13,6 +13,13 @@ namespace CapaEntidad
         public int AniosExperiencia { get; set; }
         public bool Estado { get; set; } = true;
 
+        public Servicio Servicio
+        {
+            get => default;
+            set
+            {
+            }
+        }
 
         public Mecanico(string nombre, string apellido, string cedula, string telefono, string especialidad, int aniosExperiencia) : base(nombre, apellido, cedula, telefono)
         {

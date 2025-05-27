@@ -13,6 +13,14 @@ namespace CapaEntidad
         public string marca { get; set; }
         public int anio { get; set; }
 
+        public Servicio Servicio
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public DateTime Fecha = DateTime.Now;
 
         public Vehiculo()

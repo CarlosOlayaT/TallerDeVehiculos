@@ -190,8 +190,10 @@ namespace CapaPresentacion
         }
         private void btn_create_UseClicked(object sender, EventArgs e)
         {
+            
             try
             {
+                
                 Vehiculo vehiculo = new Vehiculo()
                 {
                     placa = txt_placa.Text.Trim(),
@@ -204,8 +206,6 @@ namespace CapaPresentacion
 
                 Servicio servicio = new Servicio()
                 {
-
-
 
                     cliente = cliente,
                     mecanico = mecanico,

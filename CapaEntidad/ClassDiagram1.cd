@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="CapaEntidad.Cliente">
+    <Position X="7.5" Y="4.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAIAAkAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cliente.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Servicio" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CapaEntidad.Persona">
+    <Position X="10.5" Y="2.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgQAAACEAAAAAAAAAAAAAAAAAAAQAAAAAAI=</HashCode>
+      <FileName>Persona.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CapaEntidad.Servicio">
+    <Position X="4" Y="2.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AICBHAAAAAAAIAEEIAAAAAAAhAAAAAAAEEAAAAAAAAE=</HashCode>
+      <FileName>Servicio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CapaEntidad.Mecanico">
+    <Position X="7.5" Y="1.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAIAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAABAAg=</HashCode>
+      <FileName>Mecanico.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Servicio" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CapaEntidad.Repuesto">
+    <Position X="4.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIQAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAkA=</HashCode>
+      <FileName>Repuesto.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Servicio" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CapaEntidad.Vehiculo">
+    <Position X="0.5" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAQAAEEAAAAAAAAAAAAAABAAAAAAAAIAAA=</HashCode>
+      <FileName>Vehiculo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Servicio" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

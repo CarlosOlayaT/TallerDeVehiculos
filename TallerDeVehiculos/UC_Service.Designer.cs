@@ -167,7 +167,7 @@
             label1.Name = "label1";
             label1.Size = new Size(286, 68);
             label1.TabIndex = 0;
-            label1.Text = "Mechanic";
+            label1.Text = "Services";
             label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // panel5

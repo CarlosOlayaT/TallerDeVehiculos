@@ -13,6 +13,12 @@ namespace CapaEntidad
         public float _precio { get; set; }
         public float subtotal {  get; set; }
 
-
+        public Servicio Servicio
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

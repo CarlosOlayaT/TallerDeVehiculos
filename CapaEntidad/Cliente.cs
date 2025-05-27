@@ -11,6 +11,14 @@ namespace CapaEntidad
         public string email { get; set; }
         public string direccion {  get; set; }
 
+        public Servicio Servicio
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public Cliente(string nombre, string apellido, string cedula, string telefono, string email, string direccion)
         : base(nombre, apellido, cedula, telefono)
         {

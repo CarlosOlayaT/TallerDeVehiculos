@@ -92,17 +92,17 @@
             panel21 = new Panel();
             panel14 = new Panel();
             panel15 = new Panel();
+            panel25 = new Panel();
             panel23 = new Panel();
             label7 = new Label();
             userInfo4 = new ComponentsUI.UserInfo();
             userInfo3 = new ComponentsUI.UserInfo();
             userInfo2 = new ComponentsUI.UserInfo();
             userInfo1 = new ComponentsUI.UserInfo();
+            panel28 = new Panel();
             panel12 = new Panel();
             panel11 = new Panel();
             panel20 = new Panel();
-            panel25 = new Panel();
-            panel28 = new Panel();
             alignedPanel1.SuspendLayout();
             roundedPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)customdatagridview1).BeginInit();
@@ -128,8 +128,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel23.SuspendLayout();
             panel25.SuspendLayout();
+            panel23.SuspendLayout();
             SuspendLayout();
             // 
             // alignedPanel1
@@ -347,7 +347,7 @@
             panel22.Dock = DockStyle.Fill;
             panel22.Location = new Point(0, 0);
             panel22.Name = "panel22";
-            panel22.Size = new Size(471, 431);
+            panel22.Size = new Size(492, 431);
             panel22.TabIndex = 4;
             // 
             // panel27
@@ -361,7 +361,7 @@
             panel27.Dock = DockStyle.Fill;
             panel27.Location = new Point(0, 0);
             panel27.Name = "panel27";
-            panel27.Size = new Size(471, 431);
+            panel27.Size = new Size(492, 431);
             panel27.TabIndex = 4;
             // 
             // panel4
@@ -374,7 +374,7 @@
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(35, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(401, 231);
+            panel4.Size = new Size(422, 231);
             panel4.TabIndex = 4;
             // 
             // pictureBox4
@@ -383,7 +383,7 @@
             pictureBox4.Image = Properties.Resources.Rectangle_11;
             pictureBox4.Location = new Point(10, 10);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(381, 211);
+            pictureBox4.Size = new Size(402, 211);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 3;
             pictureBox4.TabStop = false;
@@ -393,7 +393,7 @@
             panel24.Dock = DockStyle.Top;
             panel24.Location = new Point(10, 0);
             panel24.Name = "panel24";
-            panel24.Size = new Size(381, 10);
+            panel24.Size = new Size(402, 10);
             panel24.TabIndex = 7;
             // 
             // panel10
@@ -401,13 +401,13 @@
             panel10.Dock = DockStyle.Bottom;
             panel10.Location = new Point(10, 221);
             panel10.Name = "panel10";
-            panel10.Size = new Size(381, 10);
+            panel10.Size = new Size(402, 10);
             panel10.TabIndex = 6;
             // 
             // panel9
             // 
             panel9.Dock = DockStyle.Right;
-            panel9.Location = new Point(391, 0);
+            panel9.Location = new Point(412, 0);
             panel9.Name = "panel9";
             panel9.Size = new Size(10, 231);
             panel9.TabIndex = 5;
@@ -426,7 +426,7 @@
             panel13.Dock = DockStyle.Bottom;
             panel13.Location = new Point(35, 231);
             panel13.Name = "panel13";
-            panel13.Size = new Size(401, 200);
+            panel13.Size = new Size(422, 200);
             panel13.TabIndex = 2;
             // 
             // panel16
@@ -437,7 +437,7 @@
             panel16.Dock = DockStyle.Fill;
             panel16.Location = new Point(0, 0);
             panel16.Name = "panel16";
-            panel16.Size = new Size(401, 200);
+            panel16.Size = new Size(422, 200);
             panel16.TabIndex = 2;
             // 
             // panel17
@@ -446,7 +446,7 @@
             panel17.Dock = DockStyle.Fill;
             panel17.Location = new Point(0, 67);
             panel17.Name = "panel17";
-            panel17.Size = new Size(401, 125);
+            panel17.Size = new Size(422, 125);
             panel17.TabIndex = 0;
             // 
             // roundedPanel5
@@ -462,7 +462,7 @@
             roundedPanel5.Radius.BottomRight = 25;
             roundedPanel5.Radius.TopLeft = 25;
             roundedPanel5.Radius.TopRight = 25;
-            roundedPanel5.Size = new Size(401, 125);
+            roundedPanel5.Size = new Size(422, 125);
             roundedPanel5.StateColor = Color.FromArgb(30, 39, 43);
             roundedPanel5.TabIndex = 0;
             // 
@@ -475,7 +475,7 @@
             alignedPanel3.Location = new Point(0, 0);
             alignedPanel3.Name = "alignedPanel3";
             alignedPanel3.Radius = 1;
-            alignedPanel3.Size = new Size(266, 125);
+            alignedPanel3.Size = new Size(287, 125);
             alignedPanel3.TabIndex = 0;
             // 
             // panel8
@@ -486,7 +486,7 @@
             panel8.Dock = DockStyle.Fill;
             panel8.Location = new Point(0, 0);
             panel8.Name = "panel8";
-            panel8.Size = new Size(266, 125);
+            panel8.Size = new Size(287, 125);
             panel8.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -498,7 +498,7 @@
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(20, 28);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(246, 97);
+            flowLayoutPanel1.Size = new Size(267, 97);
             flowLayoutPanel1.TabIndex = 0;
             // 
             // Pn_aceptados
@@ -611,7 +611,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(20, 0);
             label1.Name = "label1";
-            label1.Size = new Size(246, 28);
+            label1.Size = new Size(267, 28);
             label1.TabIndex = 0;
             label1.Text = "Ordenes Recibidas";
             label1.TextAlign = ContentAlignment.BottomLeft;
@@ -634,7 +634,7 @@
             chartArea1.Name = "ChartArea1";
             chart1.ChartAreas.Add(chartArea1);
             chart1.Dock = DockStyle.Right;
-            chart1.Location = new Point(266, 0);
+            chart1.Location = new Point(287, 0);
             chart1.Name = "chart1";
             chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
             series1.ChartArea = "ChartArea1";
@@ -655,7 +655,7 @@
             panel19.Dock = DockStyle.Bottom;
             panel19.Location = new Point(0, 192);
             panel19.Name = "panel19";
-            panel19.Size = new Size(401, 8);
+            panel19.Size = new Size(422, 8);
             panel19.TabIndex = 0;
             // 
             // panel18
@@ -665,7 +665,7 @@
             panel18.Dock = DockStyle.Top;
             panel18.Location = new Point(0, 0);
             panel18.Name = "panel18";
-            panel18.Size = new Size(401, 67);
+            panel18.Size = new Size(422, 67);
             panel18.TabIndex = 1;
             // 
             // roundedPanel6
@@ -688,7 +688,7 @@
             roundedPanel6.Radius.BottomRight = 25;
             roundedPanel6.Radius.TopLeft = 25;
             roundedPanel6.Radius.TopRight = 25;
-            roundedPanel6.Size = new Size(401, 59);
+            roundedPanel6.Size = new Size(422, 59);
             roundedPanel6.StateColor = Color.FromArgb(30, 39, 43);
             roundedPanel6.TabIndex = 1;
             // 
@@ -793,7 +793,7 @@
             panel21.Dock = DockStyle.Bottom;
             panel21.Location = new Point(0, 59);
             panel21.Name = "panel21";
-            panel21.Size = new Size(401, 8);
+            panel21.Size = new Size(422, 8);
             panel21.TabIndex = 1;
             // 
             // panel14
@@ -807,10 +807,20 @@
             // panel15
             // 
             panel15.Dock = DockStyle.Right;
-            panel15.Location = new Point(436, 0);
+            panel15.Location = new Point(457, 0);
             panel15.Name = "panel15";
             panel15.Size = new Size(35, 431);
             panel15.TabIndex = 1;
+            // 
+            // panel25
+            // 
+            panel25.Controls.Add(panel23);
+            panel25.Controls.Add(panel28);
+            panel25.Dock = DockStyle.Right;
+            panel25.Location = new Point(492, 0);
+            panel25.Name = "panel25";
+            panel25.Size = new Size(281, 431);
+            panel25.TabIndex = 5;
             // 
             // panel23
             // 
@@ -823,8 +833,9 @@
             panel23.Controls.Add(userInfo1);
             panel23.Dock = DockStyle.Fill;
             panel23.Location = new Point(27, 0);
+            panel23.MaximumSize = new Size(275, 1000);
             panel23.Name = "panel23";
-            panel23.Size = new Size(275, 431);
+            panel23.Size = new Size(254, 431);
             panel23.TabIndex = 0;
             // 
             // label7
@@ -832,7 +843,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Roboto", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(60, 35);
+            label7.Location = new Point(45, 39);
             label7.Name = "label7";
             label7.Size = new Size(197, 23);
             label7.TabIndex = 4;
@@ -843,7 +854,7 @@
             userInfo4.BackColor = Color.Transparent;
             userInfo4.BackgroundImageLayout = ImageLayout.Stretch;
             userInfo4.BackgroundImagePanel = null;
-            userInfo4.Location = new Point(32, 306);
+            userInfo4.Location = new Point(17, 310);
             userInfo4.Name = "userInfo4";
             userInfo4.Radius = 44;
             userInfo4.Size = new Size(225, 65);
@@ -861,7 +872,7 @@
             userInfo3.BackColor = Color.Transparent;
             userInfo3.BackgroundImageLayout = ImageLayout.Stretch;
             userInfo3.BackgroundImagePanel = null;
-            userInfo3.Location = new Point(32, 227);
+            userInfo3.Location = new Point(17, 231);
             userInfo3.Name = "userInfo3";
             userInfo3.Radius = 44;
             userInfo3.Size = new Size(225, 65);
@@ -879,7 +890,7 @@
             userInfo2.BackColor = Color.Transparent;
             userInfo2.BackgroundImageLayout = ImageLayout.Stretch;
             userInfo2.BackgroundImagePanel = null;
-            userInfo2.Location = new Point(32, 148);
+            userInfo2.Location = new Point(17, 152);
             userInfo2.Name = "userInfo2";
             userInfo2.Radius = 44;
             userInfo2.Size = new Size(225, 65);
@@ -897,7 +908,7 @@
             userInfo1.BackColor = Color.Transparent;
             userInfo1.BackgroundImageLayout = ImageLayout.Stretch;
             userInfo1.BackgroundImagePanel = null;
-            userInfo1.Location = new Point(32, 69);
+            userInfo1.Location = new Point(17, 73);
             userInfo1.Name = "userInfo1";
             userInfo1.Radius = 44;
             userInfo1.Size = new Size(225, 65);
@@ -909,6 +920,14 @@
             userInfo1.UserPerfilRol = "";
             userInfo1.UserRolFont = new Font("Roboto", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             userInfo1.UserRolForeColor = SystemColors.ControlText;
+            // 
+            // panel28
+            // 
+            panel28.Dock = DockStyle.Left;
+            panel28.Location = new Point(0, 0);
+            panel28.Name = "panel28";
+            panel28.Size = new Size(27, 431);
+            panel28.TabIndex = 1;
             // 
             // panel12
             // 
@@ -933,24 +952,6 @@
             panel20.Name = "panel20";
             panel20.Size = new Size(35, 743);
             panel20.TabIndex = 0;
-            // 
-            // panel25
-            // 
-            panel25.Controls.Add(panel23);
-            panel25.Controls.Add(panel28);
-            panel25.Dock = DockStyle.Right;
-            panel25.Location = new Point(471, 0);
-            panel25.Name = "panel25";
-            panel25.Size = new Size(302, 431);
-            panel25.TabIndex = 5;
-            // 
-            // panel28
-            // 
-            panel28.Dock = DockStyle.Left;
-            panel28.Location = new Point(0, 0);
-            panel28.Name = "panel28";
-            panel28.Size = new Size(27, 431);
-            panel28.TabIndex = 1;
             // 
             // UC_DashBoard
             // 
@@ -989,9 +990,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel25.ResumeLayout(false);
             panel23.ResumeLayout(false);
             panel23.PerformLayout();
-            panel25.ResumeLayout(false);
             ResumeLayout(false);
         }
 
